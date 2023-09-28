@@ -7,8 +7,7 @@ A brief, high-level description of what kind of application your team is thinkin
 - 
 A link to the documentation for an API your team can use related to the domain.
 - 
-A screenshot of using a tool to try out the API (like https://www.postman.com/Links to an external site. or https://hoppscotch.io/Links to an external site.Links to an external site.)
-example output of running your Java code (see below).
+A screenshot of using a tool to try out the API (like https://www.postman.com/. or https://hoppscotch.io/ example output of running your Java code.
 - 
 A list of any technical problems blocking progress (if any)
 - 
