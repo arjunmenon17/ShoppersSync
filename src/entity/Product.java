@@ -2,7 +2,7 @@ package entity;
 
 public interface Product {
 
-    float getPrice();
+    float getPrice(); //gavin test
 
     String getName();
 
