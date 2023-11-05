@@ -8,6 +8,8 @@ public interface Product {
 
     String getDescription();
 
+    String getCategory();
+
     float enviornmentalScore();
 
     String enviormmentalDescription();
