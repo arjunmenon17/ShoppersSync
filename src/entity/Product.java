@@ -10,7 +10,7 @@ public interface Product {
 
     String getCategory();
 
-    float enviornmentalScore();
+    float environmentalScore();
 
-    String enviormmentalDescription();
+    String environmentalDescription();
 }
