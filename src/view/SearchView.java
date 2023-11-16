@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class Basepage extends JFrame {
+public class SearchView extends JFrame {
     public JPanel panelMain;
     private JTextField searchInputField;
     private JButton searchButton;
@@ -15,7 +15,7 @@ public class Basepage extends JFrame {
     private JButton searchClearTextButton;
 
 
-    public Basepage() {
+    public SearchView() {
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
