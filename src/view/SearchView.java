@@ -25,19 +25,15 @@ public class SearchView extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (e.getSource().equals(searchButton)) {
 
+                }
             }
         });
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-            }
-        });
-        searchInputField.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                super.keyTyped(e);
             }
         });
         searchClearTextButton.addActionListener(new ActionListener() {

@@ -1,7 +1,6 @@
 package app;
 
 import view.SearchView;
-import view.SearchView;
 
 import javax.swing.*;
 import java.io.BufferedReader;
