@@ -1,5 +1,7 @@
 package view;
 
+import entity.Product;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -70,34 +72,5 @@ public class ShoppingListView {
                 new ShoppingListView();
             }
         });
-    }
-
-    private static class Product {
-        private String name;
-        private BigDecimal price;
-        private String desc;
-
-        public Product(String name, BigDecimal price, String desc) {
-            this.name = name;
-            this.price = price;
-            this.desc = desc;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public BigDecimal getPrice() {
-            return price;
-        }
-
-        public String getDesc() {
-            return desc;
-        }
-
-        @Override
-        public String toString() {
-            return name;
-        }
     }
 }
