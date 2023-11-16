@@ -1,6 +1,7 @@
 package app;
 
-import view.Basepage;
+import view.SearchView;
+import view.SearchView;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -15,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         // The main application window
-        JFrame application = new Basepage();
+        JFrame application = new SearchView();
 
 
     }
