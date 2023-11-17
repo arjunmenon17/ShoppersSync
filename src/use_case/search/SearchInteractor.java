@@ -46,7 +46,7 @@ public class SearchInteractor implements SearchInputBoundary {
             float price = 99;
             String brand = "brand1";
             String description = "This is the product description";
-            String image = "image.png"
+            String image = "image.png";
             Product product = productFactory.create(name, price, brand, description, image);
 
             SearchOutputData searchOutputData = new SearchOutputData(product, false);
