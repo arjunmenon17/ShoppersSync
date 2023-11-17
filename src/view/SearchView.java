@@ -30,6 +30,7 @@ public class SearchView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 viewModel.setSearchInput(searchInputField.getText());
                 viewModel.firePropertyChanged();
+
             }
         });
 

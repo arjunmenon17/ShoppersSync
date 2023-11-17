@@ -8,9 +8,11 @@ public interface Product {
 
     String getDescription();
 
-    String getCategory();
+    String getBrand();
 
     float environmentalScore();
 
     String environmentalDescription();
+
+    String getImage();
 }

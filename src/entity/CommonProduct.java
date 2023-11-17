@@ -6,18 +6,22 @@ public class CommonProduct implements Product {
 
     private final float price;
 
-    private final String category;
+    private final String brand;
+
+    private final String image;
 
     private final String description;
 
 
-    CommonProduct(String name, float price, String category, String description) {
+    CommonProduct(String name, float price, String brand, String description, String image) {
 
         this.name = name;
 
         this.price = price;
 
-        this.category = category;
+        this.image = image;
+
+        this.brand = brand;
 
         this.description = description;
 
@@ -34,7 +38,7 @@ public class CommonProduct implements Product {
     public String getDescription() {return description;}
 
     @Override
-    public String getCategory() {return category;}
+    public String getBrand() {return brand;}
 
     @Override
     public float environmentalScore() {
@@ -51,6 +55,8 @@ public class CommonProduct implements Product {
         return eParagraph;
     }
 
+    @Override
+    public String getImage() {return image;}
 
 
 }
