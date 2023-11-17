@@ -10,7 +10,7 @@ import javax.swing.*;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
         new ShoppingListView(shoppingListViewModel);
         SearchViewModel searchViewModel = new SearchViewModel();

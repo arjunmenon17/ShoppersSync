@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchViewModel;
 
 import javax.swing.*;
@@ -16,8 +17,11 @@ public class SearchView extends JFrame {
 
     private SearchViewModel viewModel;
 
-    public SearchView(SearchViewModel viewModel) {
+    private final SearchController searchController;
+
+    public SearchView(SearchViewModel viewModel, SearchController searchController) {
         this.viewModel = viewModel;
+        this.searchController = searchController;
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
@@ -28,8 +32,13 @@ public class SearchView extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewModel.setSearchInput(searchInputField.getText());
-                viewModel.firePropertyChanged();
+                //viewModel.setSearchInput(searchInputField.getText());
+                //viewModel.firePropertyChanged();
+                if (e.getSource().equals(searchButton)) {
+
+                    searchController.execute(searchInputField.getText());
+                }
+
 
             }
         });
