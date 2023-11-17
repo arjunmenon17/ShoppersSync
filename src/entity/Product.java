@@ -13,4 +13,6 @@ public interface Product {
     float environmentalScore();
 
     String environmentalDescription();
+
+    String getImage();
 }
