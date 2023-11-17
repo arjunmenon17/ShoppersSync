@@ -8,7 +8,7 @@ public interface Product {
 
     String getDescription();
 
-    String getCategory();
+    String getBrand();
 
     float environmentalScore();
 
