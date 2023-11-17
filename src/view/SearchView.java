@@ -1,10 +1,10 @@
 package view;
 
+import interface_adapter.Search.SearchController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class SearchView extends JFrame {
     public JPanel panelMain;
@@ -14,8 +14,12 @@ public class SearchView extends JFrame {
     private JPanel productPanel;
     private JButton searchClearTextButton;
 
+    private final SearchController searchController;
 
-    public SearchView() {
+
+    public SearchView(SearchController searchController) {
+        this.searchController = searchController;
+
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
@@ -26,6 +30,8 @@ public class SearchView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource().equals(searchButton)) {
+
+                    searchController.execute(searchInputField.getText());
 
                 }
             }
