@@ -8,14 +8,18 @@ public class CommonProduct implements Product {
 
     private final String brand;
 
+    private final String image;
+
     private final String description;
 
 
-    CommonProduct(String name, float price, String brand, String description) {
+    CommonProduct(String name, float price, String brand, String description, String image) {
 
         this.name = name;
 
         this.price = price;
+
+        this.image = image;
 
         this.brand = brand;
 
@@ -51,6 +55,8 @@ public class CommonProduct implements Product {
         return eParagraph;
     }
 
+    @Override
+    public String getImage() {return image;}
 
 
 }
