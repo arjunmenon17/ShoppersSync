@@ -1,13 +1,11 @@
 package view;
 
-import entity.Product;
+import interface_adapter.shopping_list.ShoppingListState;
+import interface_adapter.shopping_list.ShoppingListViewModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ShoppingListView {
 
@@ -15,39 +13,41 @@ public class ShoppingListView {
     JList<Product> list = new JList<>();
     DefaultListModel<Product> model = new DefaultListModel<>();
 
-    JButton addButton = new JButton("Add");
-    JButton clearButton = new JButton("Clear");
-    JButton checkoutButton = new JButton("Checkout");
+    JButton addButton = new JButton(ShoppingListViewModel.ADD_BUTTON_LABEL);
+    JButton clearButton = new JButton(ShoppingListViewModel.CLEAR_BUTTON_LABEL);
+    JButton checkoutButton = new JButton(ShoppingListViewModel.CHECKOUT_BUTTON_LABEL);
 
     JLabel label = new JLabel();
     JPanel panel = new JPanel();
     JSplitPane splitPane = new JSplitPane();
 
-    public ShoppingListView() {
+    private ShoppingListViewModel viewModel;
+
+    public ShoppingListView(ShoppingListViewModel viewModel) {
+        this.viewModel = viewModel;
 
         list.setModel(model);
 
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                addProduct();
+                viewModel.firePropertyChanged();
             }
         });
 
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                clearShoppingList();
+                viewModel.firePropertyChanged();
             }
         });
 
         checkoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                checkout();
+                viewModel.firePropertyChanged();
             }
         });
-
 
         splitPane.setLeftComponent(new JScrollPane(list));
         panel.add(label);
@@ -61,16 +61,5 @@ public class ShoppingListView {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-    }
-
-
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new ShoppingListView();
-            }
-        });
     }
 }
