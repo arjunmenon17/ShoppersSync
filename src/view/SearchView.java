@@ -1,6 +1,6 @@
 package view;
 
-import interface_adapter.Search.SearchController;
+import interface_adapter.Search.SearchViewModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,39 +14,37 @@ public class SearchView extends JFrame {
     private JPanel productPanel;
     private JButton searchClearTextButton;
 
-    private final SearchController searchController;
+    private SearchViewModel viewModel;
 
-
-    public SearchView(SearchController searchController) {
-        this.searchController = searchController;
-
+    public SearchView(SearchViewModel viewModel) {
+        this.viewModel = viewModel;
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1024, 600 );
+        setSize(1024, 600);
         setVisible(true);
+
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource().equals(searchButton)) {
+                viewModel.setSearchInput(searchInputField.getText());
+                viewModel.firePropertyChanged();
 
-                    searchController.execute(searchInputField.getText());
-
-                }
             }
         });
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                viewModel.firePropertyChanged();
             }
         });
+
         searchClearTextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 searchInputField.setText("");
-
             }
         });
     }
