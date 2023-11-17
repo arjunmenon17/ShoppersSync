@@ -1,4 +1,4 @@
-package use_case.shopping_list.add_list;
+package use_case.add_list;
 
 public interface AddDataAccessInterface {
 }
