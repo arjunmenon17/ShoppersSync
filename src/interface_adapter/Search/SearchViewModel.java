@@ -49,4 +49,6 @@ public class SearchViewModel extends ViewModel {
     public void firePropertyChanged() {
         support.firePropertyChange("state", null, this);
     }
+
+    public SearchState getState() { return state; }
 }
