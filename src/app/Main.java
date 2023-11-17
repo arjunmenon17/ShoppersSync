@@ -1,6 +1,9 @@
 package app;
 
+import interface_adapter.Search.SearchViewModel;
+import interface_adapter.shopping_list.ShoppingListViewModel;
 import view.SearchView;
+import view.ShoppingListView;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -13,10 +16,10 @@ import java.net.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
-        // The main application window
-        JFrame application = new SearchView();
-
+        ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
+        new ShoppingListView(shoppingListViewModel);
+        SearchViewModel searchViewModel = new SearchViewModel();
+        new SearchView(searchViewModel);
 
     }
 

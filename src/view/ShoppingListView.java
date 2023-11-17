@@ -1,5 +1,6 @@
 package view;
 
+import entity.CommonProduct;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 
@@ -10,8 +11,8 @@ import java.awt.event.ActionListener;
 public class ShoppingListView {
 
     JFrame frame = new JFrame("Shopping List");
-    JList<Product> list = new JList<>();
-    DefaultListModel<Product> model = new DefaultListModel<>();
+    JList<CommonProduct> list = new JList<>();
+    DefaultListModel<CommonProduct> model = new DefaultListModel<>();
 
     JButton addButton = new JButton(ShoppingListViewModel.ADD_BUTTON_LABEL);
     JButton clearButton = new JButton(ShoppingListViewModel.CLEAR_BUTTON_LABEL);
