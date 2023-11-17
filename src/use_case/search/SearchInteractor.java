@@ -1,6 +1,7 @@
 package use_case.search;
 
 
+import entity.Product;
 import entity.ProductFactory;
 
 
@@ -23,27 +24,35 @@ public class SearchInteractor implements SearchInputBoundary {
 
     }
 
-
-
     @Override
     public void execute(SearchInputData searchInputData) {
-        String urlString = "https://api.bluecartapi.com/request?api_key=17E691EE2B274440B026E21B2DE8CE76&type=product&item_id=782866746";
+        String urlString = "https://api.bluecartapi.com/request?api_key=17E691EE2B274440B026E21B2DE8CE76&type=product&item_id=";
+        urlString = urlString + searchInputData;
         try {
-            URL fitbit = new URL(urlString);
-            URLConnection conn = fitbit.openConnection();
-            InputStream stuff = conn.getInputStream();
+            //URL product = new URL(urlString);
+            //URLConnection conn = product.openConnection();
+            //InputStream stuff = conn.getInputStream();
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(stuff));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
+            //BufferedReader in = new BufferedReader(new InputStreamReader(stuff));
+            //String inputLine;
+            //StringBuffer response = new StringBuffer();
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
+            //while ((inputLine = in.readLine()) != null) {
+                //response.append(inputLine);
+            //}
+            //in.close();
+
+            String name = "name1";
+            float price = 99;
+            String brand = "brand1";
+            String description = "This is the product description";
+            Product product = productFactory.create(name, price, brand, description);
+
+            SearchOutputData searchOutputData = new SearchOutputData(product, false);
+
         }
         catch (Exception e) {
-            // ur mom
+            // Fail View
         }
     }
 }
