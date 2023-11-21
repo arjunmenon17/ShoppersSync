@@ -6,8 +6,8 @@ public interface ShoppingList {
 
     ArrayList<Product> getProducts();
 
-    float totalPrice();
+    float getTotalPrice();
 
-    float averageEScore();
+    float getAverageEScore();
 
 }
