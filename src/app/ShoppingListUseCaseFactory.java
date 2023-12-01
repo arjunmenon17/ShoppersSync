@@ -1,5 +1,6 @@
 package app;
 
+import interface_adapter.shopping_list.ShoppingListController;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 import view.ShoppingListView;
 
@@ -9,11 +10,15 @@ public class ShoppingListUseCaseFactory {
 
     public static ShoppingListView create(ShoppingListViewModel shoppingListViewModel){
 
-
-        return new ShoppingListView()
+        ShoppingListController shoppingListController = createShoppingListUseCase(shoppingListViewModel);
+        return new ShoppingListView();
     }
 
+    private static ShoppingListController createShoppingListUseCase(ShoppingListViewModel shoppingListViewModel) {
 
+
+
+    }
 
 
 }
