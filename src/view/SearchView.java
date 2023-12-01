@@ -14,6 +14,9 @@ public class SearchView extends JFrame {
     private JButton addButton;
     private JPanel productPanel;
     private JButton searchClearTextButton;
+    private JLabel PRODUCT_NAME;
+    private JLabel PRODUCT_DESCRIPTION;
+    private JLabel PRODUCT_BRAND;
 
     private SearchViewModel viewModel;
 

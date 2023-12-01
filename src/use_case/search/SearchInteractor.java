@@ -3,6 +3,7 @@ package use_case.search;
 
 import entity.Product;
 import entity.ProductFactory;
+import org.json.JSONObject;
 
 
 import java.io.BufferedReader;
@@ -10,6 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.*;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 public class SearchInteractor implements SearchInputBoundary {
 
@@ -29,7 +33,17 @@ public class SearchInteractor implements SearchInputBoundary {
         String urlString = "https://api.bluecartapi.com/request?api_key=17E691EE2B274440B026E21B2DE8CE76&type=product&item_id=";
         urlString = urlString + searchInputData;
         try {
-            //URL product = new URL(urlString);
+
+
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlString)).build();
+
+            client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                    .thenApply(HttpResponse::body)
+                    .thenAccept(System.out::println)
+                    .join();
+
+            //URL url = new URL(urlString);
             //URLConnection conn = product.openConnection();
             //InputStream stuff = conn.getInputStream();
 
