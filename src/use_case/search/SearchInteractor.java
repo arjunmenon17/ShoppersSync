@@ -17,13 +17,13 @@ import java.net.http.HttpResponse;
 
 public class SearchInteractor implements SearchInputBoundary {
 
-    final SearchOutputBoundary searchOutputBoundary;
+    final SearchOutputBoundary searchPresenter;
     final ProductFactory productFactory;
 
 
     public SearchInteractor(SearchOutputBoundary searchOutputBoundary, ProductFactory productFactory) {
 
-        this.searchOutputBoundary = searchOutputBoundary;
+        this.searchPresenter = searchOutputBoundary;
         this.productFactory = productFactory;
 
     }
@@ -64,6 +64,10 @@ public class SearchInteractor implements SearchInputBoundary {
             Product product = productFactory.create(name, price, brand, description, image);
 
             SearchOutputData searchOutputData = new SearchOutputData(product, false);
+            searchPresenter.prepareSuccessView(searchOutputData);
+
+
+
 
         }
         catch (Exception e) {

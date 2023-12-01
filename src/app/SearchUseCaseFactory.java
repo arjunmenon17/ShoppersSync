@@ -17,15 +17,15 @@ public class SearchUseCaseFactory {
 
     public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
 
-        SearchController searchController = createSearchUseCase(searchViewModel);
+        SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
 
         return new SearchView(searchViewModel, searchController);
 
     }
 
-    private static SearchController createSearchUseCase(SearchViewModel searchViewModel) {
+    private static SearchController createSearchUseCase(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
 
-        SearchOutputBoundary searchOutputBoundary = new SearchPresenter(searchViewModel);
+        SearchOutputBoundary searchOutputBoundary = new SearchPresenter(viewManagerModel, searchViewModel);
         ProductFactory productFactory = new CommonProductFactory();
 
         SearchInputBoundary searchInputInteractor = new SearchInteractor(searchOutputBoundary, productFactory);
