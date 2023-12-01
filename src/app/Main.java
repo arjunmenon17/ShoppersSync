@@ -31,7 +31,7 @@ public class Main {
         new ShoppingListView(shoppingListViewModel);
 
         SearchViewModel searchViewModel = new SearchViewModel();
-        SearchUseCaseFactory.create(viewManagerModel, searchViewModel)
+        SearchUseCaseFactory.create(viewManagerModel, searchViewModel);
 
 
 

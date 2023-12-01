@@ -1,2 +1,3 @@
-package interface_adapter.shopping_list;public class ShoppingListState {
+package interface_adapter.shopping_list;
+public class ShoppingListState {
 }

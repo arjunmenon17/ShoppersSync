@@ -10,6 +10,10 @@ public class ShoppingListUseCaseFactory {
     public static ShoppingListView create(ShoppingListViewModel shoppingListViewModel){
 
 
+        return new ShoppingListView()
     }
+
+
+
 
 }

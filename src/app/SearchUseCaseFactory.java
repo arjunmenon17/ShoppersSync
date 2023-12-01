@@ -3,6 +3,7 @@ package app;
 import entity.CommonProductFactory;
 import entity.ProductFactory;
 import interface_adapter.Search.SearchController;
+import interface_adapter.Search.SearchPresenter;
 import interface_adapter.Search.SearchViewModel;
 import interface_adapter.ViewManagerModel;
 import use_case.search.SearchInputBoundary;
