@@ -4,6 +4,7 @@ import entity.CommonProductFactory;
 import entity.ProductFactory;
 import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchViewModel;
+import interface_adapter.ViewManagerModel;
 import use_case.search.SearchInputBoundary;
 import use_case.search.SearchInteractor;
 import use_case.search.SearchOutputBoundary;
@@ -13,7 +14,7 @@ public class SearchUseCaseFactory {
 
     private SearchUseCaseFactory() {}
 
-    public static SearchView create(SearchViewModel searchViewModel) {
+    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
 
         SearchController searchController = createSearchUseCase(searchViewModel);
 
