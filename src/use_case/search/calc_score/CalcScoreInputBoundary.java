@@ -1,2 +1,5 @@
-package use_case.search.calc_score;public class CalcScoreInputBoundary {
+package use_case.search.calc_score;
+
+public interface CalcScoreInputBoundary {
+    void execute(CalcScoreInputData calcScoreInputData);
 }
