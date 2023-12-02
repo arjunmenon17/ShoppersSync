@@ -32,6 +32,8 @@ public class SearchState {
 
     public String getProductBrand() {return  productBrand;}
 
+    public String getProductImage() {return productImage;}
+
     public String getProductDescription() {
         return productDescription;
     }

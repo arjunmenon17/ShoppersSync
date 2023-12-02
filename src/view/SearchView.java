@@ -4,9 +4,12 @@ import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 
 public class SearchView extends JFrame {
     public JPanel panelMain;
@@ -24,13 +27,25 @@ public class SearchView extends JFrame {
     private SearchViewModel viewModel;
 
     private final SearchController searchController;
-    public void updateProductInformation(String productName, float productPrice, String brand, String productDescription) {
+    public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url) {
 
         PRODUCT_NAME.setText(productName);
         PRODUCT_PRICE.setText("Costs: $" + productPrice);
         PRODUCT_BRAND.setText("Brought to you by " + brand);
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
+
+        try {
+            URL url = new URL(image_url);
+            ImageIcon image = new ImageIcon(url);
+            PRODUCT_IMAGE.setIcon(image);
+
+        }
+        catch (Exception e) {
+            PRODUCT_IMAGE.setText("");
+        }
+
     }
+
 
     public SearchView(SearchViewModel viewModel, SearchController searchController) {
         this.viewModel = viewModel;
@@ -53,7 +68,7 @@ public class SearchView extends JFrame {
                     searchController.execute(searchInputField.getText());
                     SearchState searchState = viewModel.getState();
                     updateProductInformation(searchState.getProductName(),
-                            searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription());
+                            searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription(), searchState.getProductImage());
                 }
 
 
