@@ -3,6 +3,7 @@ package use_case.search;
 
 import entity.Product;
 import entity.ProductFactory;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -10,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -32,46 +34,46 @@ public class SearchInteractor implements SearchInputBoundary {
     public void execute(SearchInputData searchInputData) {
         String urlString = "https://api.bluecartapi.com/request?api_key=17E691EE2B274440B026E21B2DE8CE76&type=product&item_id=";
         urlString = urlString + searchInputData;
-        try {
 
+        try {
 
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlString)).build();
 
-            client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+            JSONObject x = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                     .thenApply(HttpResponse::body)
-                    .thenAccept(System.out::println)
+                    .thenApply(JSONObject::new)
                     .join();
 
-            //URL url = new URL(urlString);
-            //URLConnection conn = product.openConnection();
-            //InputStream stuff = conn.getInputStream();
+            JSONObject pass = x.getJSONObject("request_info");
+            boolean success = pass.getBoolean("success");
 
-            //BufferedReader in = new BufferedReader(new InputStreamReader(stuff));
-            //String inputLine;
-            //StringBuffer response = new StringBuffer();
+            if (success) {
+                JSONObject iproduct = x.getJSONObject("product");
+                String name = iproduct.getString("title");
+                String brand = iproduct.getString("brand");
+                String description = iproduct.getString("description");
 
-            //while ((inputLine = in.readLine()) != null) {
-                //response.append(inputLine);
-            //}
-            //in.close();
+                JSONObject main_image = iproduct.getJSONObject("main_image");
+                String image = main_image.getString("link");
 
-            String name = "name1";
-            float price = 99;
-            String brand = "brand1";
-            String description = "This is the product description";
-            String image = "image.png";
-            Product product = productFactory.create(name, price, brand, description, image);
+                JSONArray variants = iproduct.getJSONArray("variants");
+                JSONObject base_item = variants.getJSONObject(0);
+                BigDecimal price = base_item.getBigDecimal("price");
+                float f_price = price.floatValue();
 
-            SearchOutputData searchOutputData = new SearchOutputData(product, false);
-            searchPresenter.prepareSuccessView(searchOutputData);
+                Product product = productFactory.create(name, f_price, brand, description, image);
 
+                SearchOutputData searchOutputData = new SearchOutputData(product, false);
+                searchPresenter.prepareSuccessView(searchOutputData);
 
+            }
 
+            else {searchPresenter.prepareFailView();}
 
         }
         catch (Exception e) {
-            // Fail View
+            searchPresenter.prepareFailView();
         }
     }
 }

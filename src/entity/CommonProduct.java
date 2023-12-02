@@ -1,5 +1,7 @@
 package entity;
 
+import java.math.BigDecimal;
+
 public class CommonProduct implements Product {
 
     private final String name;

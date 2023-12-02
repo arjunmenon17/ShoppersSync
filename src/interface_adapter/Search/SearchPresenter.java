@@ -1,18 +1,14 @@
 package interface_adapter.Search;
 
-import interface_adapter.Search.SearchState;
-import interface_adapter.Search.SearchViewModel;
+import interface_adapter.ViewManagerModel;
 import use_case.search.SearchOutputBoundary;
 import use_case.search.SearchOutputData;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class SearchPresenter implements SearchOutputBoundary {
 
     private final SearchViewModel searchViewModel;
 
-    public SearchPresenter(SearchViewModel searchViewModel) {
+    public SearchPresenter(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
         this.searchViewModel = searchViewModel;
     }
 

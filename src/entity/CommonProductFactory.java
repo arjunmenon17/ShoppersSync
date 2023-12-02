@@ -1,5 +1,7 @@
 package entity;
 
+import java.math.BigDecimal;
+
 public class CommonProductFactory implements ProductFactory {
 
     @Override
