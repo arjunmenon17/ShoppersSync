@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingListState {
-    private List<Product> productList;
+    private List<Product> productList = new ArrayList<>();
     private String errorMessage;
 
     public ShoppingListState(ShoppingListState copy) {
@@ -21,7 +21,7 @@ public class ShoppingListState {
     }
 
     public void addProduct(Product product) {
-        productList.add(product);
+        this.productList.add(product);
     }
 
     public void setErrorMessage(String errorMessage) {

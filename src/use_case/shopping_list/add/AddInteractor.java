@@ -14,7 +14,8 @@ public class AddInteractor implements AddInputBoundary{
     public void execute(Product product) {
         try {
             dataAccess.addProductToShoppingList(product);
-            outputBoundary.prepareSuccessView(product);
+            AddOutputData addOutputData = new AddOutputData(product, false);
+            outputBoundary.prepareSuccessView(addOutputData);
         } catch (Exception e){
             outputBoundary.prepareFailView("Failed to add the product to the list");
         }

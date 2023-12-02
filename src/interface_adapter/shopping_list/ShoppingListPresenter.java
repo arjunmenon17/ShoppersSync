@@ -3,6 +3,7 @@ package interface_adapter.shopping_list;
 import entity.Product;
 import interface_adapter.ViewManagerModel;
 import use_case.shopping_list.add.AddOutputBoundary;
+import use_case.shopping_list.add.AddOutputData;
 
 public class ShoppingListPresenter implements AddOutputBoundary {
     private final ShoppingListViewModel shoppingListViewModel;
@@ -12,10 +13,10 @@ public class ShoppingListPresenter implements AddOutputBoundary {
     }
 
 
-    public void prepareSuccessView(Product newProduct) {
+    public void prepareSuccessView(AddOutputData newProduct) {
         ShoppingListState newState = shoppingListViewModel.getState();
-        newState.addProduct(newProduct);
-        shoppingListViewModel.setState(newState);
+        newState.addProduct(newProduct.getProduct());
+        this.shoppingListViewModel.setState(newState);
         shoppingListViewModel.firePropertyChanged();
     }
 
