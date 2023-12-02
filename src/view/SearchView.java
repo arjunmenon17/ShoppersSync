@@ -28,7 +28,7 @@ public class SearchView extends JFrame {
 
         PRODUCT_NAME.setText(productName);
         PRODUCT_PRICE.setText("Costs: $" + productPrice);
-        PRODUCT_BRAND.setText(brand);
+        PRODUCT_BRAND.setText("Brought to you by " + brand);
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
     }
 

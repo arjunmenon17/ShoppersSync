@@ -1,5 +1,5 @@
 package interface_adapter.shopping_list;
 
-public class ShoppingListController {
+public interface ShoppingListController {
 
 }
