@@ -1,5 +1,7 @@
 package interface_adapter.shopping_list;
 
-public interface ShoppingListController {
+import use_case.shopping_list.add.AddInputData;
 
+public interface ShoppingListController {
+    public void execute(AddInputData input);
 }
