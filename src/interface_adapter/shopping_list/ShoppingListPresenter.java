@@ -1,12 +1,13 @@
 package interface_adapter.shopping_list;
 
 import entity.Product;
+import interface_adapter.ViewManagerModel;
 import use_case.shopping_list.add.AddOutputBoundary;
 
 public class ShoppingListPresenter implements AddOutputBoundary {
     private final ShoppingListViewModel shoppingListViewModel;
 
-    public ShoppingListPresenter(ShoppingListViewModel shoppingListViewModel) {
+    public ShoppingListPresenter(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel) {
         this.shoppingListViewModel = shoppingListViewModel;
     }
 

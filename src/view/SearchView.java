@@ -1,8 +1,11 @@
 package view;
 
+import entity.Product;
 import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
+import interface_adapter.shopping_list.add.AddController;
+import use_case.shopping_list.add.AddInputData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +27,8 @@ public class SearchView extends JFrame {
     private SearchViewModel viewModel;
 
     private final SearchController searchController;
+
+    private final AddController addController;
     public void updateProductInformation(String productName, float productPrice, String brand, String productDescription) {
 
         PRODUCT_NAME.setText(productName);
@@ -32,9 +37,10 @@ public class SearchView extends JFrame {
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
     }
 
-    public SearchView(SearchViewModel viewModel, SearchController searchController) {
+    public SearchView(SearchViewModel viewModel, SearchController searchController, AddController addController) {
         this.viewModel = viewModel;
         this.searchController = searchController;
+        this.addController = addController;
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
@@ -64,6 +70,8 @@ public class SearchView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add code to execute add
+                Product product = viewModel.getState().getProduct();
+                addController.execute(product);
                 viewModel.firePropertyChanged();
             }
         });

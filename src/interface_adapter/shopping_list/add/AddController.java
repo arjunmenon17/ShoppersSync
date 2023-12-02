@@ -1,5 +1,6 @@
 package interface_adapter.shopping_list.add;
 
+import entity.Product;
 import interface_adapter.shopping_list.ShoppingListController;
 import use_case.shopping_list.add.AddInputBoundary;
 import use_case.shopping_list.add.AddInputData;
@@ -11,7 +12,7 @@ public class AddController implements ShoppingListController {
         this.addToShoppingListUseCase = addToShoppingListUseCase;
     }
 
-    public void execute(AddInputData input) {
-        addToShoppingListUseCase.execute(input);
+    public void execute(Product product) {
+        addToShoppingListUseCase.execute(product);
     }
 }
