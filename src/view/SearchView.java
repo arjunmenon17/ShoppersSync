@@ -6,6 +6,7 @@ import interface_adapter.Search.SearchViewModel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -36,7 +37,7 @@ public class SearchView extends JFrame {
 
         try {
             URL url = new URL(image_url);
-            ImageIcon image = new ImageIcon(url);
+            ImageIcon image = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
             PRODUCT_IMAGE.setIcon(image);
 
         }
@@ -86,6 +87,10 @@ public class SearchView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 searchInputField.setText("");
+                PRODUCT_NAME.setText("");
+                PRODUCT_PRICE.setText("");
+                PRODUCT_BRAND.setText("");
+                PRODUCT_DESCRIPTION.setText("");
 
             }
         });
