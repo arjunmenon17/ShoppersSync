@@ -22,10 +22,11 @@ public class SearchUseCaseFactory {
 
     private SearchUseCaseFactory() {}
 
-    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel, ShoppingListViewModel shoppingListViewModel) {
+    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel,
+                                    ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface) {
 
         SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
-        AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel);
+        AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel, dataAccessInterface);
 
         return new SearchView(searchViewModel, searchController, addController, shoppingListViewModel);
 
@@ -44,6 +45,6 @@ public class SearchUseCaseFactory {
     private static AddController createAddUseCase(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface) {
         AddOutputBoundary addOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
 
-        AddInputBoundary addInteractor = new AddInteractor(addOutputBoundary);
+        AddInputBoundary addInteractor = new AddInteractor(dataAccessInterface, addOutputBoundary);
     }
 }
