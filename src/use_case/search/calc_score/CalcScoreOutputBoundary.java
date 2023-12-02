@@ -1,2 +1,4 @@
-package use_case.search.calc_score;public class CalcScoreOutputBoundary {
+package use_case.search.calc_score;
+
+public class CalcScoreOutputBoundary {
 }
