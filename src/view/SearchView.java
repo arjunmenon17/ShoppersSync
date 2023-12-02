@@ -1,6 +1,7 @@
 package view;
 
 import interface_adapter.Search.SearchController;
+import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
 
 import javax.swing.*;
@@ -16,11 +17,15 @@ public class SearchView extends JFrame {
     private JButton searchClearTextButton;
     private JLabel PRODUCT_NAME;
     private JLabel PRODUCT_DESCRIPTION;
-    private JLabel PRODUCT_BRAND;
+    private JLabel PRODUCT_PRICE;
 
     private SearchViewModel viewModel;
 
     private final SearchController searchController;
+    public void updateProductInformation(String productName, float productPrice) {
+        PRODUCT_NAME.setText("Product Name: " + productName);
+        PRODUCT_PRICE.setText("Product Price: " + productPrice);
+    }
 
     public SearchView(SearchViewModel viewModel, SearchController searchController) {
         this.viewModel = viewModel;
@@ -40,6 +45,9 @@ public class SearchView extends JFrame {
                 if (e.getSource().equals(searchButton)) {
 
                     searchController.execute(searchInputField.getText());
+                    SearchState searchState = viewModel.getState();
+                    updateProductInformation(searchState.getProductName(),
+                            searchState.getProductPrice());
                 }
 
 
