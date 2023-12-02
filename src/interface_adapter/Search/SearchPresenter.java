@@ -16,6 +16,7 @@ public class SearchPresenter implements SearchOutputBoundary {
     public void prepareSuccessView(SearchOutputData response) {
 
         SearchState searchState = searchViewModel.getState();
+        searchState.setProduct(response.getProduct());
         searchState.setProductName(response.getProduct().getName());
         searchState.setProductPrice(response.getProduct().getPrice());
         searchState.setProductDescription(response.getProduct().getDescription());
