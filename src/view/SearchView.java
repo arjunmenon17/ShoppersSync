@@ -6,7 +6,6 @@ import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 import interface_adapter.shopping_list.add.AddController;
-import use_case.shopping_list.add.AddInputData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
