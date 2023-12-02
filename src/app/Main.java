@@ -14,18 +14,18 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
 
-        JFrame application = new JFrame("ShopperSYNC");
-        //application.setSize();
-        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-
-        CardLayout searchCardLayout = new CardLayout();
-
-        JPanel views = new JPanel(searchCardLayout);
-        application.add(views);
+//        JFrame application = new JFrame("ShopperSYNC");
+//        //application.setSize();
+//        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//
+//
+//        CardLayout searchCardLayout = new CardLayout();
+//
+//        JPanel views = new JPanel(searchCardLayout);
+//        application.add(views);
 
         ViewManagerModel viewManagerModel = new ViewManagerModel();
-        new ViewManager(views, searchCardLayout, viewManagerModel);
+//        new ViewManager(views, searchCardLayout, viewManagerModel);
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
         new ShoppingListView(shoppingListViewModel);
@@ -33,6 +33,8 @@ public class Main {
         SearchViewModel searchViewModel = new SearchViewModel();
         SearchUseCaseFactory.create(viewManagerModel, searchViewModel);
 
+//        application.pack();
+//        application.setVisible(true);
 
 
 

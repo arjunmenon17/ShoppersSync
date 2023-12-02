@@ -8,12 +8,15 @@ public class SearchState {
 
     private String productImage = "";
 
+    private String productBrand = "";
+
     public SearchState(SearchState copy) {
         productName = copy.productName;
         productPrice = copy.productPrice;
         productDescription = copy.productDescription;
         searchError = copy.searchError;
         productImage = copy.productImage;
+        productBrand = copy.productBrand;
     }
 
     public SearchState() {
@@ -26,6 +29,8 @@ public class SearchState {
     public float getProductPrice() {
         return productPrice;
     }
+
+    public String getProductBrand() {return  productBrand;}
 
     public String getProductDescription() {
         return productDescription;
@@ -54,6 +59,8 @@ public class SearchState {
     public void setSearchError(String searchError) {
         this.searchError = searchError;
     }
+
+    public void setProductBrand(String productBrand) {this.productBrand = productBrand;}
 
     @Override
     public String toString() {

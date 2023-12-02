@@ -17,14 +17,19 @@ public class SearchView extends JFrame {
     private JButton searchClearTextButton;
     private JLabel PRODUCT_NAME;
     private JLabel PRODUCT_DESCRIPTION;
+    private JLabel PRODUCT_BRAND;
+    private JLabel PRODUCT_IMAGE;
     private JLabel PRODUCT_PRICE;
 
     private SearchViewModel viewModel;
 
     private final SearchController searchController;
-    public void updateProductInformation(String productName, float productPrice) {
-        PRODUCT_NAME.setText("Product Name: " + productName);
-        PRODUCT_PRICE.setText("Product Price: " + productPrice);
+    public void updateProductInformation(String productName, float productPrice, String brand, String productDescription) {
+
+        PRODUCT_NAME.setText(productName);
+        PRODUCT_PRICE.setText("Costs: $" + productPrice);
+        PRODUCT_BRAND.setText(brand);
+        PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
     }
 
     public SearchView(SearchViewModel viewModel, SearchController searchController) {
@@ -37,6 +42,7 @@ public class SearchView extends JFrame {
         setSize(1024, 600);
         setVisible(true);
 
+
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,7 +53,7 @@ public class SearchView extends JFrame {
                     searchController.execute(searchInputField.getText());
                     SearchState searchState = viewModel.getState();
                     updateProductInformation(searchState.getProductName(),
-                            searchState.getProductPrice());
+                            searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription());
                 }
 
 
@@ -65,6 +71,7 @@ public class SearchView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 searchInputField.setText("");
+
             }
         });
     }
