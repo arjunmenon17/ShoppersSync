@@ -10,6 +10,7 @@ import interface_adapter.shopping_list.add.AddController;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class SearchView extends JFrame {
     public JPanel panelMain;
@@ -73,7 +74,7 @@ public class SearchView extends JFrame {
                 Product product = viewModel.getState().getProduct();
                 if (product != null) {
                     addController.execute(product);
-                    viewModel.firePropertyChanged();
+                    shoppingListViewModel.firePropertyChanged();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "No product available",

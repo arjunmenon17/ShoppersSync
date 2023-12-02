@@ -46,5 +46,6 @@ public class SearchUseCaseFactory {
         AddOutputBoundary addOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
 
         AddInputBoundary addInteractor = new AddInteractor(dataAccessInterface, addOutputBoundary);
+        return new AddController(addInteractor);
     }
 }

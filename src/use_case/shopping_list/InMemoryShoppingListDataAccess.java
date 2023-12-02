@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryShoppingListDataAccess implements AddDataAccessInterface {
-    private List<Product> shoppingList;
+    private List<Product> shoppingList = new ArrayList<>();
 
     public InMemoryShoppingListDataAccess() {
-        this.shoppingList = new ArrayList<>();
+        this.shoppingList = getShoppingList();
     }
 
 
