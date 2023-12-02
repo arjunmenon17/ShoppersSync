@@ -20,7 +20,7 @@ public class ShoppingListPresenter implements AddOutputBoundary {
 
 
     public void prepareFailView(String error) {
-        ShoppingListState newState = new ShoppingListState();
+        ShoppingListState newState = shoppingListViewModel.getState();
         newState.setErrorMessage(error);
         shoppingListViewModel.setState(newState);
         shoppingListViewModel.firePropertyChanged();

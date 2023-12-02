@@ -63,6 +63,7 @@ public class SearchView extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Add code to execute add
                 viewModel.firePropertyChanged();
             }
         });

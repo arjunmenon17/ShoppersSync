@@ -1,15 +1,21 @@
 package interface_adapter.shopping_list;
 
+import entity.Product;
 import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingListViewModel extends ViewModel {
 
     public static final String ADD_BUTTON_LABEL = "Add";
     public static final String CLEAR_BUTTON_LABEL = "Clear";
     public static final String CHECKOUT_BUTTON_LABEL = "Checkout";
+
+    private List<Product> shoppingList;
+    private String errorMessage;
 
     private ShoppingListState state = new ShoppingListState();
 
@@ -20,11 +26,24 @@ public class ShoppingListViewModel extends ViewModel {
     public void setState(ShoppingListState state) {
         this.state = state;
     }
+    public List<Product> getProductList() {
+        return shoppingList;
+    }
+
+    public void addProduct(Product product) {
+        shoppingList.add(product);
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
-    // This is what the ShoppingListPresenter will call to let the ViewModel know
-    // to alert the View
     public void firePropertyChanged() {
         support.firePropertyChange("state", null, this.state);
     }

@@ -9,9 +9,11 @@ public class ShoppingListState {
     private List<Product> productList;
     private String errorMessage;
 
+    public ShoppingListState(ShoppingListState copy) {
+        productList = copy.productList;
+        errorMessage = copy.errorMessage;
+    }
     public ShoppingListState() {
-        this.productList = new ArrayList<>();
-        this.errorMessage = null;
     }
 
     public List<Product> getProductList() {
