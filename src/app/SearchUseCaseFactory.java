@@ -21,10 +21,10 @@ public class SearchUseCaseFactory {
 
     private SearchUseCaseFactory() {}
 
-    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
+    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel, ShoppingListViewModel shoppingListViewModel) {
 
         SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
-//        AddController addController = createAddUseCase(viewManagerModel, );
+        AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel);
 
         return new SearchView(searchViewModel, searchController, addController);
 
