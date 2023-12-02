@@ -14,6 +14,7 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
 
     public FileUserDataAccessObject() {}
 
+    @Override
     public float get_score_from_file(String company) {
         try {
             String line;
@@ -44,7 +45,7 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
         }
         return -1;
     }
-
+    @Override
     public void add_to_productScores (String company, float score) {
         productScores.put(company, score);
     }
