@@ -1,7 +1,9 @@
 package use_case.shopping_list.remove_list;
 
-public interface RemoveOutputBoundary {
-    void prepareSuccessView();
+import entity.Product;
 
-    void prepareFailView();
+public interface RemoveOutputBoundary {
+    void prepareSuccessView(Product newProduct);
+
+    void prepareFailView(String error);
 }

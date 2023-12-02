@@ -1,4 +1,24 @@
 package use_case.shopping_list.remove_list;
 
-public class RemoveInteractor {
+import entity.Product;
+
+public class RemoveInteractor implements RemoveInputBoundary{
+    private final RemoveDataAccessInterface dataAccess;
+    private final RemoveOutputBoundary outputBoundary;
+
+    public RemoveInteractor(RemoveDataAccessInterface dataAccess, RemoveOutputBoundary outputBoundary) {
+        this.dataAccess = dataAccess;
+        this.outputBoundary = outputBoundary;
+    }
+
+
+    public void execute(RemoveInputData removeInputData) {
+        Product product = removeInputData.getProduct();
+        try {
+            dataAccess.removeProductFromShoppingList(product);
+            outputBoundary.prepareSuccessView(product);
+        } catch (Exception e) {
+            outputBoundary.prepareFailView("Failed to remove product from the list");
+        }
+    }
 }

@@ -9,5 +9,5 @@ public class RemoveInputData {
         this.product = product;
     }
 
-    Product getProduct() {return product;}
+    public Product getProduct() {return product;}
 }
