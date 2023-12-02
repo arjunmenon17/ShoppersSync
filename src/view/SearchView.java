@@ -86,6 +86,7 @@ public class SearchView extends JFrame {
         searchClearTextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Clears all text and images.
                 searchInputField.setText("");
                 PRODUCT_NAME.setText("");
                 PRODUCT_PRICE.setText("");
