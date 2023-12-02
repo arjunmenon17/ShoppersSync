@@ -17,6 +17,7 @@ import use_case.shopping_list.add.AddInputBoundary;
 import use_case.shopping_list.add.AddInteractor;
 import use_case.shopping_list.add.AddOutputBoundary;
 import view.SearchView;
+import view.ShoppingListView;
 
 public class SearchUseCaseFactory {
 
@@ -28,7 +29,10 @@ public class SearchUseCaseFactory {
         SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
         AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel, dataAccessInterface);
 
-        return new SearchView(searchViewModel, searchController, addController, shoppingListViewModel);
+
+        SearchView searchView = new SearchView(searchViewModel, searchController, addController, shoppingListViewModel);
+
+        return searchView;
 
     }
 

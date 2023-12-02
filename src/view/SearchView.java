@@ -74,7 +74,8 @@ public class SearchView extends JFrame {
                 Product product = viewModel.getState().getProduct();
                 if (product != null) {
                     addController.execute(product);
-                    shoppingListViewModel.firePropertyChanged();
+                    shoppingListViewModel.notifyObservers(product);
+                    viewModel.firePropertyChanged();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "No product available",

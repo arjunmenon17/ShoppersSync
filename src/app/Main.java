@@ -30,7 +30,8 @@ public class Main {
 //        new ViewManager(views, searchCardLayout, viewManagerModel);
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
-        new ShoppingListView(shoppingListViewModel);
+//        new ShoppingListView(shoppingListViewModel);
+        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel);
 
         SearchViewModel searchViewModel = new SearchViewModel();
         AddDataAccessInterface addDataAccess = new InMemoryShoppingListDataAccess();

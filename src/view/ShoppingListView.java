@@ -1,6 +1,8 @@
 package view;
 
 import entity.CommonProduct;
+import entity.Product;
+import interface_adapter.shopping_list.ShoppingListObserver;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 
@@ -8,7 +10,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ShoppingListView {
+public class ShoppingListView implements ShoppingListObserver {
 
     JFrame frame = new JFrame("Shopping List");
     JList<CommonProduct> list = new JList<>();
@@ -23,6 +25,12 @@ public class ShoppingListView {
     JSplitPane splitPane = new JSplitPane();
 
     private ShoppingListViewModel viewModel;
+    public void updateShoppingList(Product product){
+        if (product != null) {
+            model.addElement((CommonProduct) product);
+        }
+    }
+
 
     public ShoppingListView(ShoppingListViewModel viewModel) {
         this.viewModel = viewModel;
@@ -51,6 +59,7 @@ public class ShoppingListView {
                 viewModel.firePropertyChanged();
             }
         });
+
 
         splitPane.setLeftComponent(new JScrollPane(list));
         panel.add(label);

@@ -23,6 +23,18 @@ public class ShoppingListViewModel extends ViewModel {
         super("shopping list");
     }
 
+    private List<ShoppingListObserver> observers = new ArrayList<>();
+
+    public void addObserver(ShoppingListObserver observer) {
+        observers.add(observer);
+    }
+
+    public void notifyObservers(Product product) {
+        for (ShoppingListObserver observer : observers) {
+            observer.updateShoppingList(product);
+        }
+    }
+
     public void setState(ShoppingListState state) {
         this.state = state;
     }
