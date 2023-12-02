@@ -31,9 +31,13 @@ public class SearchView extends JFrame {
     public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url) {
 
         PRODUCT_NAME.setText(productName);
+        PRODUCT_NAME.setFont(new Font("Serif", Font.BOLD, 30));
         PRODUCT_PRICE.setText("Costs: $" + productPrice);
-        PRODUCT_BRAND.setText("Brought to you by " + brand);
+        PRODUCT_PRICE.setFont(new Font("Serif", Font.PLAIN, 25));
+        PRODUCT_BRAND.setText("This product was manufactured by " + brand);
+        PRODUCT_BRAND.setFont(new Font("Serif", Font.PLAIN, 25));
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
+        PRODUCT_DESCRIPTION.setFont(new Font("Serif", Font.PLAIN, 25));
 
         try {
             URL url = new URL(image_url);
@@ -45,6 +49,8 @@ public class SearchView extends JFrame {
         catch (Exception e) {
             PRODUCT_IMAGE.setIcon(null);
             PRODUCT_IMAGE.setText("Image not found.");
+            PRODUCT_IMAGE.setFont(new Font("Serif", Font.PLAIN, 25));
+            PRODUCT_BRAND.setText("");
         }
 
     }
@@ -72,6 +78,11 @@ public class SearchView extends JFrame {
                     SearchState searchState = viewModel.getState();
                     updateProductInformation(searchState.getProductName(),
                             searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription(), searchState.getProductImage());
+                    if (searchState.getSearchError() != null) {
+
+                        JOptionPane.showMessageDialog(null, searchState.getSearchError(),
+                                "Please Try Again", JOptionPane.WARNING_MESSAGE);
+                    }
                 }
 
 
