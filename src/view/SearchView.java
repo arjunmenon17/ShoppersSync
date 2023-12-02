@@ -71,8 +71,14 @@ public class SearchView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Add code to execute add
                 Product product = viewModel.getState().getProduct();
-                addController.execute(product);
-                viewModel.firePropertyChanged();
+                if (product != null) {
+                    addController.execute(product);
+                    viewModel.firePropertyChanged();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No product available",
+                            "Product Not Found", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 
