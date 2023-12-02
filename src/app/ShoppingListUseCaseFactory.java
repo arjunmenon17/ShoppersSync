@@ -16,7 +16,7 @@ public class ShoppingListUseCaseFactory {
 
     private static ShoppingListController createShoppingListUseCase(ShoppingListViewModel shoppingListViewModel) {
 
-
+        return null;
 
     }
 
