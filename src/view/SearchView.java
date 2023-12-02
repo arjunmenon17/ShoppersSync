@@ -4,8 +4,8 @@ import entity.Product;
 import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
+import interface_adapter.shopping_list.ShoppingListViewModel;
 import interface_adapter.shopping_list.add.AddController;
-import use_case.shopping_list.add.AddInputData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -37,7 +37,7 @@ public class SearchView extends JFrame {
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
     }
 
-    public SearchView(SearchViewModel viewModel, SearchController searchController, AddController addController) {
+    public SearchView(SearchViewModel viewModel, SearchController searchController, AddController addController, ShoppingListViewModel shoppingListViewModel) {
         this.viewModel = viewModel;
         this.searchController = searchController;
         this.addController = addController;
