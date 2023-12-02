@@ -12,6 +12,7 @@ import interface_adapter.shopping_list.add.AddController;
 import use_case.search.SearchInputBoundary;
 import use_case.search.SearchInteractor;
 import use_case.search.SearchOutputBoundary;
+import use_case.shopping_list.add.AddDataAccessInterface;
 import use_case.shopping_list.add.AddInputBoundary;
 import use_case.shopping_list.add.AddInteractor;
 import use_case.shopping_list.add.AddOutputBoundary;
@@ -21,12 +22,12 @@ public class SearchUseCaseFactory {
 
     private SearchUseCaseFactory() {}
 
-    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
+    public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel, ShoppingListViewModel shoppingListViewModel) {
 
         SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
-//        AddController addController = createAddUseCase(viewManagerModel, );
+        AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel);
 
-        return new SearchView(searchViewModel, searchController, addController);
+        return new SearchView(searchViewModel, searchController, addController, shoppingListViewModel);
 
     }
 
@@ -40,7 +41,9 @@ public class SearchUseCaseFactory {
 
         return new SearchController(searchInputInteractor);
     }
-    private static AddController createAddUseCase(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel){
+    private static AddController createAddUseCase(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface) {
         AddOutputBoundary addOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+
+        AddInputBoundary addInteractor = new AddInteractor(addOutputBoundary);
     }
 }
