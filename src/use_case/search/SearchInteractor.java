@@ -62,7 +62,9 @@ public class SearchInteractor implements SearchInputBoundary {
                 BigDecimal price = base_item.getBigDecimal("price");
                 float f_price = price.floatValue();
 
-                Product product = productFactory.create(name, f_price, brand, description, image);
+                float esg = 0.00F;
+
+                Product product = productFactory.create(name, f_price, brand, description, image, esg);
 
                 SearchOutputData searchOutputData = new SearchOutputData(product, false);
                 searchPresenter.prepareSuccessView(searchOutputData);
