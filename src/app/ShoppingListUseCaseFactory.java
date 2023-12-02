@@ -16,11 +16,6 @@ public class ShoppingListUseCaseFactory {
         return shoppingListView;
     }
 
-    private static ShoppingListController createShoppingListUseCase(ShoppingListViewModel shoppingListViewModel) {
-
-        return null;
-
-    }
 
 
 }
