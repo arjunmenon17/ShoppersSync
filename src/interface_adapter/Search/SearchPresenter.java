@@ -27,9 +27,16 @@ public class SearchPresenter implements SearchOutputBoundary {
         searchViewModel.firePropertyChanged();
     }
 
-    public void prepareFailView() {
+    public void prepareFailView(String error) {
         SearchState searchState = searchViewModel.getState();
-        searchState.setSearchError("error");
+        searchState.setProduct(null);
+        searchState.setProductName("");
+        searchState.setProductPrice(0.00F);
+        searchState.setProductDescription("");
+        searchState.setProductImage("");
+        searchState.setProductBrand("");
+        searchState.setSearchError(error);
+        this.searchViewModel.setState(searchState);
         searchViewModel.firePropertyChanged();
     }
 }

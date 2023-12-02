@@ -37,12 +37,14 @@ public class SearchView extends JFrame {
 
         try {
             URL url = new URL(image_url);
-            ImageIcon image = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+            ImageIcon image = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(350, 350, Image.SCALE_DEFAULT));
             PRODUCT_IMAGE.setIcon(image);
+            PRODUCT_IMAGE.setText("");
 
         }
         catch (Exception e) {
-            PRODUCT_IMAGE.setText("");
+            PRODUCT_IMAGE.setIcon(null);
+            PRODUCT_IMAGE.setText("Image not found.");
         }
 
     }
@@ -92,6 +94,8 @@ public class SearchView extends JFrame {
                 PRODUCT_PRICE.setText("");
                 PRODUCT_BRAND.setText("");
                 PRODUCT_DESCRIPTION.setText("");
+                PRODUCT_IMAGE.setText("");
+                PRODUCT_IMAGE.setIcon(null);
 
             }
         });
