@@ -11,11 +11,11 @@ public class RemoveInteractor implements RemoveInputBoundary{
         this.outputBoundary = outputBoundary;
     }
 
-
     public void execute(Product product) {
         try {
             dataAccess.removeProductFromShoppingList(product);
-            outputBoundary.prepareSuccessView(product);
+            RemoveOutputData removeOutputData = new RemoveOutputData(false, product);
+            outputBoundary.prepareRemoveSuccessView(removeOutputData);
         } catch (Exception e) {
             outputBoundary.prepareFailView("Failed to remove product from the list");
         }
