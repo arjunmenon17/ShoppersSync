@@ -20,6 +20,7 @@ public class ShoppingListView implements ShoppingListObserver {
 
     JButton clearButton = new JButton(ShoppingListViewModel.CLEAR_BUTTON_LABEL);
     JButton checkoutButton = new JButton(ShoppingListViewModel.CHECKOUT_BUTTON_LABEL);
+    JButton removeButton = new JButton(ShoppingListViewModel.REMOVE_BUTTON_LABEL);
 
     JLabel label = new JLabel();
     JPanel panel = new JPanel();
@@ -80,10 +81,18 @@ public class ShoppingListView implements ShoppingListObserver {
             }
         });
 
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                viewModel.firePropertyChanged();
+            }
+        });
+
         splitPane.setLeftComponent(new JScrollPane(list));
         panel.add(label);
         panel.add(clearButton);
         panel.add(checkoutButton);
+        panel.add(removeButton);
         splitPane.setRightComponent(panel);
 
         initializeListSelectionListener();

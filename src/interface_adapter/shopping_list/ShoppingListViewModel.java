@@ -12,6 +12,7 @@ public class ShoppingListViewModel extends ViewModel {
 
     public static final String CLEAR_BUTTON_LABEL = "Clear";
     public static final String CHECKOUT_BUTTON_LABEL = "Checkout";
+    public static final String REMOVE_BUTTON_LABEL = "Remove";
 
     private List<Product> shoppingList;
     private String errorMessage;
@@ -43,6 +44,10 @@ public class ShoppingListViewModel extends ViewModel {
 
     public void addProduct(Product product) {
         shoppingList.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        shoppingList.remove(product);
     }
 
     public void setErrorMessage(String errorMessage) {
