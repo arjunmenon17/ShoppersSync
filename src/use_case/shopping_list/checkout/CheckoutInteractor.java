@@ -16,7 +16,11 @@ public class CheckoutInteractor implements CheckoutInputBoundary{\
     @Override
     public void execute(List<Product> products) {
         try {
-            checkoutDataAccessInterface
+            checkoutDataAccessInterface.checkoutProductsInShoppingList(products);
+            CheckoutOutputData checkoutOutputData = new CheckoutOutputData(products, false);
+            checkoutOutputBoundary.prepareSuccessView(checkoutOutputData);
+        } catch (Exception e) {
+            checkoutOutputBoundary.prepareFailView("Failed to checkout products")
         }
     }
 }
