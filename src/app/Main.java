@@ -1,8 +1,10 @@
 package app;
 
+import data_access.FileUserDataAccessObject;
 import interface_adapter.Search.SearchViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.InMemoryShoppingListDataAccess;
 import use_case.shopping_list.add.AddDataAccessInterface;
 import view.SearchView;

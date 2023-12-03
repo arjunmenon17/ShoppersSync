@@ -12,6 +12,7 @@ import interface_adapter.shopping_list.add.AddController;
 import use_case.search.SearchInputBoundary;
 import use_case.search.SearchInteractor;
 import use_case.search.SearchOutputBoundary;
+import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.add.AddDataAccessInterface;
 import use_case.shopping_list.add.AddInputBoundary;
 import use_case.shopping_list.add.AddInteractor;
@@ -26,11 +27,11 @@ public class SearchUseCaseFactory {
     public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel,
                                     ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface, CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
 
-        SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
+        SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel, calcScoreDataAccessInterface);
         AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel, dataAccessInterface);
 
 
-        SearchView searchView = new SearchView(searchViewModel, searchController, addController, shoppingListViewModel, calcScoreDataAccessInterface);
+        SearchView searchView = new SearchView(searchViewModel, searchController, addController, shoppingListViewModel);
 
         return searchView;
 

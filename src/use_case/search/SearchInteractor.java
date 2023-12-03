@@ -5,6 +5,10 @@ import entity.Product;
 import entity.ProductFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.search.calc_score.CalcScoreDataAccessInterface;
+import use_case.search.calc_score.CalcScoreInputBoundary;
+import use_case.search.calc_score.CalcScoreInputData;
+import use_case.search.calc_score.CalcScoreInteractor;
 
 
 import java.io.BufferedReader;
@@ -66,7 +70,7 @@ public class SearchInteractor implements SearchInputBoundary {
 
                 CalcScoreInputData calcScoreInputData = new CalcScoreInputData(brand);
 
-                calcScoreInputBoundary calcScoreInteractor = new CalcScoreInteractor(calcScoreDataAccessInterface);
+                CalcScoreInputBoundary calcScoreInteractor = new CalcScoreInteractor(calcScoreDataAccessInterface);
                 float esg = calcScoreInteractor.execute(calcScoreInputData);
 
                 Product product = productFactory.create(name, f_price, brand, description, image, esg);

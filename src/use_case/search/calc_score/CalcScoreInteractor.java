@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CalcScoreInteractor implements CalcScoreInputBoundary{
-    final CalcScoreOutputBoundary calcScoreOutputBoundary;
     final CalcScoreDataAccessInterface calcScoreDataAccessInterface;
 
     public CalcScoreInteractor (CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
@@ -33,7 +32,7 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
             connection.setRequestProperty("Authorization", "Bearer " + apiKey);
             connection.setRequestProperty("Content-Type", "application/json");
 
-            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + "What is the parent company for " + brand + " in one word?" + "\"}]}";
+            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + "What is the parent company for " + brand + " without explaining/in one word?" + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(body);
