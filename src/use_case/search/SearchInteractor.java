@@ -71,11 +71,11 @@ public class SearchInteractor implements SearchInputBoundary {
 
             }
 
-            else {searchPresenter.prepareFailView();}
+            else {searchPresenter.prepareFailView("Product does not exist, please enter a valid Product ID.");}
 
         }
         catch (Exception e) {
-            searchPresenter.prepareFailView();
+            searchPresenter.prepareFailView("Search failed please try again.");
         }
     }
 }
