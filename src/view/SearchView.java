@@ -1,15 +1,17 @@
 package view;
 
+import entity.Product;
 import interface_adapter.Search.SearchController;
 import interface_adapter.Search.SearchState;
 import interface_adapter.Search.SearchViewModel;
+import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.add.AddController;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.net.URL;
 
 public class SearchView extends JFrame {
@@ -28,6 +30,7 @@ public class SearchView extends JFrame {
     private SearchViewModel viewModel;
 
     private final SearchController searchController;
+    private final AddController addController;
     public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url) {
 
         PRODUCT_NAME.setText(productName);
@@ -55,10 +58,10 @@ public class SearchView extends JFrame {
 
     }
 
-
-    public SearchView(SearchViewModel viewModel, SearchController searchController) {
+    public SearchView(SearchViewModel viewModel, SearchController searchController, AddController addController, ShoppingListViewModel shoppingListViewModel) {
         this.viewModel = viewModel;
         this.searchController = searchController;
+        this.addController = addController;
 
         setContentPane(panelMain);
         setTitle("ShopperSYNC");
@@ -92,7 +95,18 @@ public class SearchView extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewModel.firePropertyChanged();
+                // Add code to execute add
+
+                Product product = viewModel.getState().getProduct();
+                if (product != null) {
+                    addController.execute(product);
+                    shoppingListViewModel.notifyObservers(product);
+                    viewModel.firePropertyChanged();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No product available",
+                            "Product Not Found", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 
