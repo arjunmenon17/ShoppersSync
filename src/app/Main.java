@@ -32,7 +32,7 @@ public class Main {
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
 //        new ShoppingListView(shoppingListViewModel);
-        CheckoutController checkoutController = new CheckoutController();
+
         ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel, checkoutController);
 
         SearchViewModel searchViewModel = new SearchViewModel();

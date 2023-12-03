@@ -5,5 +5,5 @@ import entity.Product;
 import java.util.List;
 
 public interface CheckoutDataAccessInterface {
-    public void checkoutProductsInShoppingList(List<Product> productList);
+    public float checkoutProductsInShoppingList(List<Product> productList);
 }
