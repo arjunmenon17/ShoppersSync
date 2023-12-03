@@ -9,6 +9,8 @@ import interface_adapter.shopping_list.ShoppingListViewModel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ShoppingListView implements ShoppingListObserver {
 
@@ -31,11 +33,34 @@ public class ShoppingListView implements ShoppingListObserver {
         }
     }
 
+    private void displaySelectedProductDetails(int selectedIndex) {
+        if (selectedIndex >= 0 && selectedIndex < model.getSize()) {
+            Product selectedProduct = model.getElementAt(selectedIndex);
+            String details = "Name: " + selectedProduct.getName() + "\n"
+                    + "Price: $" + selectedProduct.getPrice();
+            label.setText(details);
+        }
+    }
+    private void initializeListSelectionListener() {
+        list.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int selectedIndex = list.getSelectedIndex();
+                if (selectedIndex != -1) {
+                    displaySelectedProductDetails(selectedIndex);
+                }
+            }
+        });
+    }
+
 
     public ShoppingListView(ShoppingListViewModel viewModel) {
         this.viewModel = viewModel;
 
         list.setModel(model);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -60,13 +85,14 @@ public class ShoppingListView implements ShoppingListObserver {
             }
         });
 
-
         splitPane.setLeftComponent(new JScrollPane(list));
         panel.add(label);
         panel.add(addButton);
         panel.add(clearButton);
         panel.add(checkoutButton);
         splitPane.setRightComponent(panel);
+
+        initializeListSelectionListener();
 
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(splitPane);
