@@ -12,8 +12,7 @@ public class RemoveInteractor implements RemoveInputBoundary{
     }
 
 
-    public void execute(RemoveInputData removeInputData) {
-        Product product = removeInputData.getProduct();
+    public void execute(Product product) {
         try {
             dataAccess.removeProductFromShoppingList(product);
             outputBoundary.prepareSuccessView(product);

@@ -24,6 +24,8 @@ public class ShoppingListState {
         this.productList.add(product);
     }
 
+    public void removeProduct(Product product) {this.productList.remove(product);}
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
