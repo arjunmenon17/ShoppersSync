@@ -21,7 +21,7 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
     }
 
     public String find_parent_company(String brand) {
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/chat/completions";
         String model = "gpt-3.5-turbo";
 
@@ -32,7 +32,7 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
             connection.setRequestProperty("Authorization", "Bearer " + apiKey);
             connection.setRequestProperty("Content-Type", "application/json");
 
-            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + "What is the parent company for " + brand + " without explaining/in one word?" + "\"}]}";
+            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + "What is the parent company for " + brand + "? Write " + brand + "'s official company name if " + brand + " is a parent company. Only use ONE OR TWO WORDS in your response." + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(body);

@@ -22,7 +22,8 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
 
             while ((line = br.readLine()) != null) {
                 String[] columns = line.split(",");
-                String entityName = columns[0].replaceAll("\"", ""); // Remove quotes if present
+                String entityName = columns[0].replaceAll("\"", "").replace(",", ""); // Remove quotes and commas if present
+                company = company.replaceAll("[\",]", ""); // Remove quotes and commas from the company name
 
                 if (entityName.toLowerCase().contains(company.toLowerCase())) {
                     if (columns.length > 6) {
