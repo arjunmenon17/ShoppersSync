@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class ShoppingListView implements ShoppingListObserver {
 
@@ -72,7 +73,15 @@ public class ShoppingListView implements ShoppingListObserver {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewModel.firePropertyChanged();
+                List<Product> products = viewModel.getState().getProductList();
+                if (products != null) {
+                    checkoutController.execute(products);
+                    viewModel.firePropertyChanged();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No products available",
+                            "Product Not Found", JOptionPane.WARNING_MESSAGE);
+                }
                 
             }
         });
