@@ -63,6 +63,8 @@ public class ShoppingListView implements ShoppingListObserver {
 
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
+        frame.setSize(612, 300);
+
 
         clearButton.addActionListener(new ActionListener() {
             @Override
