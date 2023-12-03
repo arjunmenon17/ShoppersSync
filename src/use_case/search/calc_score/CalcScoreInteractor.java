@@ -17,11 +17,14 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
     public float execute(CalcScoreInputData calcScoreInputData) {
         String brand = calcScoreInputData.getCompany();
         String company = find_parent_company(brand);
+        if (company.equals("Item Not Found.")) {
+            return -1.00F;
+        }
         return calcScoreDataAccessInterface.get_score_from_file(company, brand);
     }
 
     public String find_parent_company(String brand) {
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/chat/completions";
         String model = "gpt-3.5-turbo";
 
@@ -51,7 +54,7 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
             return extractMessageFromJSONResponse(response.toString());
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return "Item Not Found.";
         }
     }
 

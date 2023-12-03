@@ -43,12 +43,13 @@ public class SearchView extends JFrame {
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
         PRODUCT_DESCRIPTION.setFont(new Font("Serif", Font.PLAIN, 20));
 
-        if (esg == -1) {
+        PRODUCT_ESG.setText("Environmental Social Governance Score: " + esg);
+        PRODUCT_ESG.setFont(new Font("Serif", Font.PLAIN, 20));
+
+        if (esg == -1.00F) {
             PRODUCT_ESG.setText("Environmental Social Governance Score unavailable.");
             PRODUCT_ESG.setFont(new Font("Serif", Font.PLAIN, 20));
         }
-        PRODUCT_ESG.setText("Environmental Social Governance Score: " + esg);
-        PRODUCT_ESG.setFont(new Font("Serif", Font.PLAIN, 20));
 
         try {
             URL url = new URL(image_url);
