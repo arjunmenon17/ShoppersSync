@@ -32,7 +32,7 @@ public class SearchInteractor implements SearchInputBoundary {
 
     @Override
     public void execute(SearchInputData searchInputData) {
-        String urlString = "https://api.bluecartapi.com/request?api_key=0153AF61F01B49EFB406385498040BF3&type=product&item_id=";
+        String urlString = "https://api.bluecartapi.com/request?api_key=17E691EE2B274440B026E21B2DE8CE76&type=product&item_id=";
         urlString = urlString + searchInputData.getId();
 
         try {
