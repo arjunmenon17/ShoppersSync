@@ -15,7 +15,7 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
     public FileUserDataAccessObject() {}
 
     @Override
-    public float get_score_from_file(String company) {
+    public float get_score_from_file(String company, String brand) {
         try {
             String line;
             BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -33,7 +33,7 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
                     }
                     float esg_score = Float.parseFloat(columns[5].trim());
                     br.close();
-                    add_to_productScores(company, esg_score);
+                    add_to_productScores(brand, esg_score);
                     return (esg_score);
                 }
             }
