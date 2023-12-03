@@ -122,6 +122,7 @@ public class SearchView extends JFrame {
                 PRODUCT_DESCRIPTION.setText("");
                 PRODUCT_IMAGE.setText("");
                 PRODUCT_IMAGE.setIcon(null);
+                viewModel.getState().setProduct(null);
 
             }
         });
