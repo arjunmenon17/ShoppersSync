@@ -3,6 +3,8 @@ package app;
 import interface_adapter.Search.SearchViewModel;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import use_case.shopping_list.InMemoryShoppingListDataAccess;
+import use_case.shopping_list.add.AddDataAccessInterface;
 import view.SearchView;
 import view.ShoppingListView;
 import view.ViewManager;
@@ -28,10 +30,12 @@ public class Main {
 //        new ViewManager(views, searchCardLayout, viewManagerModel);
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
-        new ShoppingListView(shoppingListViewModel);
+//        new ShoppingListView(shoppingListViewModel);
+        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel);
 
         SearchViewModel searchViewModel = new SearchViewModel();
-        SearchUseCaseFactory.create(viewManagerModel, searchViewModel);
+        AddDataAccessInterface addDataAccess = new InMemoryShoppingListDataAccess();
+        SearchUseCaseFactory.create(viewManagerModel, searchViewModel, shoppingListViewModel, addDataAccess);
 
 //        application.pack();
 //        application.setVisible(true);
