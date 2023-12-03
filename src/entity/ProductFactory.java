@@ -1,5 +1,5 @@
 package entity;
 
 public interface ProductFactory {
-    Product create(String name, float price, String brand, String description, String image );
+    Product create(String name, float price, String brand, String description, String image , float esg);
 }
