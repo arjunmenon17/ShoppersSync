@@ -86,8 +86,8 @@ public class ShoppingListView implements ShoppingListObserver {
                     viewModel.firePropertyChanged();
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "No products available",
-                            "Product Not Found", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "No products available to checkout",
+                            "No Products Found", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
