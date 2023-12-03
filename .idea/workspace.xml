@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csc207Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csc207Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +51,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+
     "git-widget-placeholder": "main",
+
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -98,5 +106,66 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_access/FileUserDataAccessObject.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
+          <line>16</line>
+          <properties class="use_case.search.calc_score.CalcScoreInteractor" method="execute">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

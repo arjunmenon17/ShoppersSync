@@ -12,6 +12,7 @@ import interface_adapter.shopping_list.add.AddController;
 import use_case.search.SearchInputBoundary;
 import use_case.search.SearchInteractor;
 import use_case.search.SearchOutputBoundary;
+import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.add.AddDataAccessInterface;
 import use_case.shopping_list.add.AddInputBoundary;
 import use_case.shopping_list.add.AddInteractor;
@@ -24,9 +25,9 @@ public class SearchUseCaseFactory {
     private SearchUseCaseFactory() {}
 
     public static SearchView create(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel,
-                                    ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface) {
+                                    ShoppingListViewModel shoppingListViewModel, AddDataAccessInterface dataAccessInterface, CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
 
-        SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel);
+        SearchController searchController = createSearchUseCase(viewManagerModel, searchViewModel, calcScoreDataAccessInterface);
         AddController addController = createAddUseCase(viewManagerModel, shoppingListViewModel, dataAccessInterface);
 
 
@@ -36,12 +37,12 @@ public class SearchUseCaseFactory {
 
     }
 
-    private static SearchController createSearchUseCase(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel) {
+    private static SearchController createSearchUseCase(ViewManagerModel viewManagerModel, SearchViewModel searchViewModel, CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
 
         SearchOutputBoundary searchOutputBoundary = new SearchPresenter(viewManagerModel, searchViewModel);
         ProductFactory productFactory = new CommonProductFactory();
 
-        SearchInputBoundary searchInputInteractor = new SearchInteractor(searchOutputBoundary, productFactory);
+        SearchInputBoundary searchInputInteractor = new SearchInteractor(searchOutputBoundary, productFactory, calcScoreDataAccessInterface);
 
 
         return new SearchController(searchInputInteractor);

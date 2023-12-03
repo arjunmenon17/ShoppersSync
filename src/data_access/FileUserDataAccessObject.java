@@ -22,7 +22,8 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
 
             while ((line = br.readLine()) != null) {
                 String[] columns = line.split(",");
-                String entityName = columns[0].replaceAll("\"", ""); // Remove quotes if present
+                String entityName = columns[0].replaceAll("\"", "").replace(",", ""); // Remove quotes and commas if present
+                company = company.replaceAll("[\",]", ""); // Remove quotes and commas from the company name
 
                 if (entityName.toLowerCase().contains(company.toLowerCase())) {
                     if (columns.length > 6) {
@@ -38,12 +39,12 @@ public class FileUserDataAccessObject implements CalcScoreDataAccessInterface {
                 }
             }
             br.close();
-            add_to_productScores(company, -1);
-            return -1;
+            add_to_productScores(company, -1.00F);
+            return -1.00F;
         } catch (IOException e) {
             System.out.println("An error occurred while reading the CSV file: " + e.getMessage());
         }
-        return -1;
+        return -1.00F;
     }
     @Override
     public void add_to_productScores (String company, float score) {
