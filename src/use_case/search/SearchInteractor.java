@@ -44,14 +44,7 @@ public class SearchInteractor implements SearchInputBoundary {
                     .thenApply(HttpResponse::body)
                     .thenApply(JSONObject::new)
                     .join();
-            
-            String name = "name1";
-            float price = 99;
-            String brand = "brand1";
-            String description = "This is the product description";
-            String image = "image.png";
 
-            Product product = productFactory.create(name, price, brand, description, image);
             JSONObject pass = x.getJSONObject("request_info");
             boolean success = pass.getBoolean("success");
 
