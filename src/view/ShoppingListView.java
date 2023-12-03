@@ -18,7 +18,6 @@ public class ShoppingListView implements ShoppingListObserver {
     JList<CommonProduct> list = new JList<>();
     DefaultListModel<CommonProduct> model = new DefaultListModel<>();
 
-    JButton addButton = new JButton(ShoppingListViewModel.ADD_BUTTON_LABEL);
     JButton clearButton = new JButton(ShoppingListViewModel.CLEAR_BUTTON_LABEL);
     JButton checkoutButton = new JButton(ShoppingListViewModel.CHECKOUT_BUTTON_LABEL);
 
@@ -61,16 +60,6 @@ public class ShoppingListView implements ShoppingListObserver {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-                viewModel.firePropertyChanged();
-            }
-        });
-
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,7 +76,6 @@ public class ShoppingListView implements ShoppingListObserver {
 
         splitPane.setLeftComponent(new JScrollPane(list));
         panel.add(label);
-        panel.add(addButton);
         panel.add(clearButton);
         panel.add(checkoutButton);
         splitPane.setRightComponent(panel);

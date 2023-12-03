@@ -10,7 +10,6 @@ import java.util.List;
 
 public class ShoppingListViewModel extends ViewModel {
 
-    public static final String ADD_BUTTON_LABEL = "Add";
     public static final String CLEAR_BUTTON_LABEL = "Clear";
     public static final String CHECKOUT_BUTTON_LABEL = "Checkout";
 
