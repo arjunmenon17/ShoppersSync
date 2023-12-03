@@ -21,7 +21,7 @@ public class ShoppingListUseCaseFactory {
     private ShoppingListUseCaseFactory() {}
 
     public static ShoppingListView create(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel, CheckoutDataAccessInterface checkoutDataAccessInterface){
-        CheckoutController checkoutController = createCheckoutUseCase(viewManagerModel, shoppingListViewModel, checkoutDataAccessInterface)
+        CheckoutController checkoutController = createCheckoutUseCase(viewManagerModel, shoppingListViewModel, checkoutDataAccessInterface);
 
         ShoppingListView shoppingListView = new ShoppingListView(shoppingListViewModel, checkoutController);
         shoppingListViewModel.addObserver(shoppingListView);

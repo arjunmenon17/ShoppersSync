@@ -25,6 +25,10 @@ public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, C
 
     @Override
     public float checkoutProductsInShoppingList(List<Product> productList) {
-
+        float total_price = 0.00F;
+        for (Product product: productList) {
+            total_price += product.getPrice();
+        }
+        return total_price;
     }
 }

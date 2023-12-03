@@ -6,6 +6,7 @@ import interface_adapter.shopping_list.ShoppingListViewModel;
 import interface_adapter.shopping_list.checkout.CheckoutController;
 import use_case.shopping_list.InMemoryShoppingListDataAccess;
 import use_case.shopping_list.add.AddDataAccessInterface;
+import use_case.shopping_list.checkout.CheckoutDataAccessInterface;
 import view.SearchView;
 import view.ShoppingListView;
 import view.ViewManager;
@@ -32,8 +33,8 @@ public class Main {
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
 //        new ShoppingListView(shoppingListViewModel);
-
-        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel, checkoutController);
+        CheckoutDataAccessInterface checkoutDataAccessInterface = new InMemoryShoppingListDataAccess();
+        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel, checkoutDataAccessInterface);
 
         SearchViewModel searchViewModel = new SearchViewModel();
         AddDataAccessInterface addDataAccess = new InMemoryShoppingListDataAccess();
