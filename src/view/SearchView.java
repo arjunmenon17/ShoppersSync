@@ -26,6 +26,7 @@ public class SearchView extends JFrame {
     private JLabel PRODUCT_BRAND;
     private JLabel PRODUCT_IMAGE;
     private JLabel PRODUCT_PRICE;
+    private JLabel PRODUCT_ESG;
 
     private SearchViewModel viewModel;
 
@@ -34,13 +35,13 @@ public class SearchView extends JFrame {
     public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url) {
 
         PRODUCT_NAME.setText(productName);
-        PRODUCT_NAME.setFont(new Font("Serif", Font.BOLD, 30));
+        PRODUCT_NAME.setFont(new Font("Serif", Font.BOLD, 25));
         PRODUCT_PRICE.setText("Costs: $" + productPrice);
-        PRODUCT_PRICE.setFont(new Font("Serif", Font.PLAIN, 25));
+        PRODUCT_PRICE.setFont(new Font("Serif", Font.PLAIN, 20));
         PRODUCT_BRAND.setText("This product was manufactured by " + brand);
-        PRODUCT_BRAND.setFont(new Font("Serif", Font.PLAIN, 25));
+        PRODUCT_BRAND.setFont(new Font("Serif", Font.PLAIN, 20));
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
-        PRODUCT_DESCRIPTION.setFont(new Font("Serif", Font.PLAIN, 25));
+        PRODUCT_DESCRIPTION.setFont(new Font("Serif", Font.PLAIN, 20));
 
         try {
             URL url = new URL(image_url);
