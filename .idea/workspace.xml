@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Csc207Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csc207Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" afterDir="false" />
     </list>
@@ -27,10 +30,18 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2XueNHr0h445GmAHGxj0RATGxTw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -91,5 +102,42 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/search/SearchInteractor.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

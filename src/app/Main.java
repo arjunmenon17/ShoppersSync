@@ -35,7 +35,8 @@ public class Main {
 
         SearchViewModel searchViewModel = new SearchViewModel();
         AddDataAccessInterface addDataAccess = new InMemoryShoppingListDataAccess();
-        SearchUseCaseFactory.create(viewManagerModel, searchViewModel, shoppingListViewModel, addDataAccess);
+        CalcScoreDataAccessInterface calcScoreDataAccessInterface = new FileUserDataAccessObject();
+        SearchUseCaseFactory.create(viewManagerModel, searchViewModel, shoppingListViewModel, addDataAccess, calcScoreDataAccessInterface);
 
 //        application.pack();
 //        application.setVisible(true);

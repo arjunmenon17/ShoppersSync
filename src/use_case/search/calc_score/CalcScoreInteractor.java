@@ -11,15 +11,14 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
     final CalcScoreOutputBoundary calcScoreOutputBoundary;
     final CalcScoreDataAccessInterface calcScoreDataAccessInterface;
 
-    public CalcScoreInteractor (CalcScoreOutputBoundary calcScoreOutputBoundary, CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
-        this.calcScoreOutputBoundary = calcScoreOutputBoundary;
+    public CalcScoreInteractor (CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
         this.calcScoreDataAccessInterface = calcScoreDataAccessInterface;
     }
     @Override
-    public void execute(CalcScoreInputData calcScoreInputData) {
+    public float execute(CalcScoreInputData calcScoreInputData) {
         String brand = calcScoreInputData.getCompany();
         String company = find_parent_company(brand);
-        float score = calcScoreDataAccessInterface.get_score_from_file(company, brand);
+        return calcScoreDataAccessInterface.get_score_from_file(company, brand);
     }
 
     public String find_parent_company(String brand) {
