@@ -5,6 +5,7 @@ import entity.Product;
 import interface_adapter.shopping_list.ShoppingListObserver;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.checkout.CheckoutController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ import java.awt.event.MouseEvent;
 
 public class ShoppingListView implements ShoppingListObserver {
 
+    private final CheckoutController checkoutController;
     JFrame frame = new JFrame("Shopping List");
     JList<CommonProduct> list = new JList<>();
     DefaultListModel<CommonProduct> model = new DefaultListModel<>();
@@ -56,8 +58,9 @@ public class ShoppingListView implements ShoppingListObserver {
     }
 
 
-    public ShoppingListView(ShoppingListViewModel viewModel) {
+    public ShoppingListView(ShoppingListViewModel viewModel, CheckoutController checkoutController) {
         this.viewModel = viewModel;
+        this.checkoutController = checkoutController;
 
         list.setModel(model);
 
@@ -70,6 +73,7 @@ public class ShoppingListView implements ShoppingListObserver {
             @Override
             public void actionPerformed(ActionEvent e) {
                 viewModel.firePropertyChanged();
+                
             }
         });
 
