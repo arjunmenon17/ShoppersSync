@@ -5,8 +5,9 @@ import interface_adapter.ViewManagerModel;
 import use_case.shopping_list.add.AddOutputBoundary;
 import use_case.shopping_list.add.AddOutputData;
 import use_case.shopping_list.remove_list.RemoveOutputData;
+import use_case.shopping_list.remove_list.RemoveOutputBoundary;
 
-public class ShoppingListPresenter implements AddOutputBoundary {
+public class ShoppingListPresenter implements AddOutputBoundary, RemoveOutputBoundary {
     private final ShoppingListViewModel shoppingListViewModel;
 
     public ShoppingListPresenter(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel) {

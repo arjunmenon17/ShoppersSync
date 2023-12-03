@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
+    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="Worked more on remove">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "budwised"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="29d86400-1ade-4fea-9172-c33ed2ddefd2" />
+        <option name="url" value="https://github.com/arjunmenon17/Csc207Project.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,11 +107,24 @@
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
       <workItem from="1701576321283" duration="691000" />
-      <workItem from="1701637768983" duration="1435000" />
+      <workItem from="1701637768983" duration="2084000" />
     </task>
+    <task id="LOCAL-00001" summary="Worked more on remove">
+      <option name="closed" value="true" />
+      <created>1701639365486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701639365486</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Worked more on remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked more on remove" />
   </component>
 </project>
