@@ -73,6 +73,13 @@ public class ShoppingListView implements ShoppingListObserver {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                viewModel.firePropertyChanged();
+            }
+        });
+
+        checkoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 List<Product> products = viewModel.getState().getProductList();
                 if (products != null) {
                     checkoutController.execute(products);
@@ -82,14 +89,6 @@ public class ShoppingListView implements ShoppingListObserver {
                     JOptionPane.showMessageDialog(null, "No products available",
                             "Product Not Found", JOptionPane.WARNING_MESSAGE);
                 }
-                
-            }
-        });
-
-        checkoutButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                viewModel.firePropertyChanged();
             }
         });
 
