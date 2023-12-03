@@ -131,6 +131,7 @@ public class SearchView extends JFrame {
                 PRODUCT_ESG.setText("");
                 PRODUCT_IMAGE.setText("");
                 PRODUCT_IMAGE.setIcon(null);
+                viewModel.getState().setProduct(null);
 
             }
         });

@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Csc207Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csc207Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Checkout" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,16 +51,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "calc__environmental__score",
+
+    "git-widget-placeholder": "main",
+
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,6 +100,7 @@
       <workItem from="1699483352260" duration="1789000" />
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
+      <workItem from="1701580467525" duration="2887000" />
     </task>
     <servers />
   </component>
