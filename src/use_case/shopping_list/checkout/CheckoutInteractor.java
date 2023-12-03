@@ -15,6 +15,8 @@ public class CheckoutInteractor implements CheckoutInputBoundary{\
     }
     @Override
     public void execute(List<Product> products) {
-
+        try {
+            checkoutDataAccessInterface
+        }
     }
 }
