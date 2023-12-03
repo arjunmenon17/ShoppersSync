@@ -10,6 +10,8 @@ public class SearchState {
 
     private String productImage = "";
 
+    private float ESG = -1.00F;
+
     private String productBrand = "";
 
     private Product product;
@@ -18,6 +20,7 @@ public class SearchState {
         productName = copy.productName;
         productPrice = copy.productPrice;
         productDescription = copy.productDescription;
+        ESG = copy.ESG;
         searchError = copy.searchError;
         productImage = copy.productImage;
         productBrand = copy.productBrand;
@@ -42,6 +45,8 @@ public class SearchState {
     public String getProductDescription() {
         return productDescription;
     }
+
+    public float getProductESG() {return ESG;}
 
     public Product getProduct() {return product;}
 
@@ -70,6 +75,7 @@ public class SearchState {
     }
 
     public void setProductBrand(String productBrand) {this.productBrand = productBrand;}
+    public void setESG(float ESG) {this.ESG = ESG;}
 
     public void setProduct(Product product) {this.product = product;}
 
