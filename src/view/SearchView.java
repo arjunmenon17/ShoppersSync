@@ -71,6 +71,7 @@ public class SearchView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add code to execute add
+
                 Product product = viewModel.getState().getProduct();
                 if (product != null) {
                     addController.execute(product);

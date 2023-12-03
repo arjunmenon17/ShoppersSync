@@ -30,6 +30,9 @@ public class ShoppingListView implements ShoppingListObserver {
         if (product != null) {
             model.addElement((CommonProduct) product);
         }
+        if (!frame.isVisible()) {
+            frame.setVisible(true);
+        }
     }
 
     private void displaySelectedProductDetails(int selectedIndex) {
@@ -58,7 +61,8 @@ public class ShoppingListView implements ShoppingListObserver {
 
         list.setModel(model);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+
 
         clearButton.addActionListener(new ActionListener() {
             @Override
