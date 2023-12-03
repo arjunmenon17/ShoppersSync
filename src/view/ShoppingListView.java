@@ -32,6 +32,8 @@ public class ShoppingListView {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
                 viewModel.firePropertyChanged();
             }
         });
