@@ -5,6 +5,7 @@ import entity.Product;
 import interface_adapter.shopping_list.ShoppingListObserver;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.checkout.CheckoutController;
 import interface_adapter.shopping_list.clear.ClearController;
 import interface_adapter.shopping_list.remove_list.RemoveController;
 
@@ -13,10 +14,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class ShoppingListView implements ShoppingListObserver {
 
+
+    private final CheckoutController checkoutController;
+
     public Product removedProduct = null;
+
     JFrame frame = new JFrame("Shopping List");
     JList<CommonProduct> list = new JList<>();
     DefaultListModel<CommonProduct> model = new DefaultListModel<>();
@@ -80,8 +86,9 @@ public class ShoppingListView implements ShoppingListObserver {
 
 
     public ShoppingListView(ShoppingListViewModel viewModel, RemoveController removeController,
-                            ClearController clearController) {
+                            ClearController clearController, CheckoutController checkoutController) {
         this.viewModel = viewModel;
+        this.checkoutController = checkoutController;
 
         list.setModel(model);
 
@@ -102,7 +109,20 @@ public class ShoppingListView implements ShoppingListObserver {
         checkoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewModel.firePropertyChanged();
+                List<Product> products = viewModel.getState().getProductList();
+                if (!products.isEmpty()) {
+                    checkoutController.execute(products);
+                    ShoppingListState shoppingListState = viewModel.getState();
+                    float total_price = shoppingListState.get_total_price();
+                    float tax = Math.round(total_price*0.13F);
+                    JOptionPane.showMessageDialog(null, total_price + "\n" + "+ " + tax + " (GST)" + "\n" + "----------" + "\n" + "$ " + (total_price + tax),
+                            "Checkout", JOptionPane.INFORMATION_MESSAGE);
+                    viewModel.firePropertyChanged();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No products available to checkout",
+                            "No Products Found", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 

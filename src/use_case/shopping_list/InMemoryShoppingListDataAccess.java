@@ -2,15 +2,18 @@ package use_case.shopping_list;
 
 import entity.Product;
 import use_case.shopping_list.add.AddDataAccessInterface;
+import use_case.shopping_list.checkout.CheckoutDataAccessInterface;
 import use_case.shopping_list.clear.ClearDataAccessInterface;
 import use_case.shopping_list.remove_list.RemoveDataAccessInterface;
 import use_case.shopping_list.remove_list.RemoveInputData;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, RemoveDataAccessInterface,
-        ClearDataAccessInterface {
+        ClearDataAccessInterface, CheckoutDataAccessInterface {
+
     private List<Product> shoppingList = new ArrayList<>();
 
     public InMemoryShoppingListDataAccess() {
@@ -32,5 +35,14 @@ public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, R
 
     public List<Product> getShoppingList() {
         return shoppingList;
+    }
+
+    @Override
+    public float checkoutProductsInShoppingList(List<Product> productList) {
+        float total_price = 0.00F;
+        for (Product product: productList) {
+            total_price += product.getPrice();
+        }
+        return total_price;
     }
 }
