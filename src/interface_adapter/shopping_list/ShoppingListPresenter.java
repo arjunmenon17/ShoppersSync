@@ -4,8 +4,10 @@ import entity.Product;
 import interface_adapter.ViewManagerModel;
 import use_case.shopping_list.add.AddOutputBoundary;
 import use_case.shopping_list.add.AddOutputData;
+import use_case.shopping_list.checkout.CheckoutOutputBoundary;
+import use_case.shopping_list.checkout.CheckoutOutputData;
 
-public class ShoppingListPresenter implements AddOutputBoundary {
+public class ShoppingListPresenter implements AddOutputBoundary, CheckoutOutputBoundary {
     private final ShoppingListViewModel shoppingListViewModel;
 
     public ShoppingListPresenter(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel) {
@@ -20,6 +22,11 @@ public class ShoppingListPresenter implements AddOutputBoundary {
         shoppingListViewModel.firePropertyChanged();
     }
 
+
+    @Override
+    public void prepareSuccessView(CheckoutOutputData total_price) {
+
+    }
 
     public void prepareFailView(String error) {
         ShoppingListState newState = shoppingListViewModel.getState();
