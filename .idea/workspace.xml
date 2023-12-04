@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Test/src/AddTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Csc207Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csc207Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +43,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Testing",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -60,24 +65,66 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\arjun\IdeaProjects\Csc207Project\src" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="Csc207Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="JUnit.AddTest">
+    <configuration name="AddInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AddInteractorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddInteractorTest.testAddProductToShoppingList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AddInteractorTest" />
+      <option name="METHOD_NAME" value="testAddProductToShoppingList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddInteractorTest.testAddProductToShoppingList_Failure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AddInteractorTest" />
+      <option name="METHOD_NAME" value="testAddProductToShoppingList_Failure" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddInteractorTest.testAddProductToShoppingList_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AddInteractorTest" />
+      <option name="METHOD_NAME" value="testAddProductToShoppingList_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AddTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AddTest" />
+        <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList_Failure" />
+        <item itemvalue="JUnit.AddInteractorTest" />
+        <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList_Success" />
+        <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList" />
       </list>
     </recent_temporary>
   </component>
@@ -92,11 +139,17 @@
       <workItem from="1699483352260" duration="1789000" />
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
-      <workItem from="1701580467525" duration="2887000" />
+      <workItem from="1701580467525" duration="16884000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList_Failure.ic" NAME="AddInteractorTest.testAddProductToShoppingList_Failure Coverage Results" MODIFIED="1701648924139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList.ic" NAME="AddInteractorTest.testAddProductToShoppingList Coverage Results" MODIFIED="1701644358617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest.ic" NAME="AddInteractorTest Coverage Results" MODIFIED="1701648607991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList_Success.ic" NAME="AddInteractorTest.testAddProductToShoppingList_Success Coverage Results" MODIFIED="1701645285176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
