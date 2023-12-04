@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
+    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="IMPLETED CLEAR USE CASE">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/checkout/CheckoutInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/checkout/CheckoutInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShoppingListView.java" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,20 +24,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Checkout" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -51,13 +41,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "gavins__branch",
+    "git-widget-placeholder": "checkout",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -65,9 +55,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\arjun\IdeaProjects\Csc207Project\src" />
@@ -116,6 +105,7 @@
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
       <workItem from="1701580467525" duration="2887000" />
+      <workItem from="1701671282813" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="IMPLETED REMOVE_LIST USE CASE">
       <option name="closed" value="true" />
@@ -150,13 +140,11 @@
       </map>
     </option>
   </component>
-
   <component name="VcsManagerConfiguration">
     <MESSAGE value="IMPLETED REMOVE_LIST USE CASE" />
     <MESSAGE value="IMPLETED CLEAR USE CASE" />
     <option name="LAST_COMMIT_MESSAGE" value="IMPLETED CLEAR USE CASE" />
   </component>
-
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -195,7 +183,6 @@
           <line>62</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
-
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
           <line>16</line>
