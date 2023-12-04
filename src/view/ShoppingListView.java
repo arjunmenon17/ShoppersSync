@@ -81,12 +81,12 @@ public class ShoppingListView implements ShoppingListObserver {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<Product> products = viewModel.getState().getProductList();
-                if (products != null) {
+                if (!products.isEmpty()) {
                     checkoutController.execute(products);
                     ShoppingListState shoppingListState = viewModel.getState();
                     float total_price = shoppingListState.get_total_price();
-                    float tax = total_price*0.13F;
-                    JOptionPane.showMessageDialog(null, total_price + "\n" + "+ " + tax + " (GST)" + "\n" + "----------" + "\n" + (total_price + tax),
+                    float tax = Math.round(total_price*0.13F);
+                    JOptionPane.showMessageDialog(null, total_price + "\n" + "+ " + tax + " (GST)" + "\n" + "----------" + "\n" + "$ " + (total_price + tax),
                             "Checkout", JOptionPane.INFORMATION_MESSAGE);
                     viewModel.firePropertyChanged();
                 }

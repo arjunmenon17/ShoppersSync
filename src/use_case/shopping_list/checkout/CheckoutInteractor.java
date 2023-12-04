@@ -5,7 +5,7 @@ import interface_adapter.shopping_list.checkout.CheckoutController;
 
 import java.util.List;
 
-public class CheckoutInteractor implements CheckoutInputBoundary{\
+public class CheckoutInteractor implements CheckoutInputBoundary{
     private final CheckoutDataAccessInterface checkoutDataAccessInterface;
     private final CheckoutOutputBoundary checkoutOutputBoundary;
 
