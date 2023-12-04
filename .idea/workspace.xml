@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/src/AddTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/src/AddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/AddTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/src/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/SearchTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddInteractorTest.testAddProductToShoppingList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AddInteractorTest" />
-      <option name="METHOD_NAME" value="testAddProductToShoppingList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AddInteractorTest.testAddProductToShoppingList_Failure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Test" />
       <option name="PACKAGE_NAME" value="" />
@@ -118,13 +108,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SearchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AddTest" />
+        <item itemvalue="JUnit.SearchTest" />
         <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList_Failure" />
         <item itemvalue="JUnit.AddInteractorTest" />
         <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList_Success" />
-        <item itemvalue="JUnit.AddInteractorTest.testAddProductToShoppingList" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +138,7 @@
       <workItem from="1699483352260" duration="1789000" />
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
-      <workItem from="1701580467525" duration="16884000" />
+      <workItem from="1701580467525" duration="20813000" />
     </task>
     <servers />
   </component>
@@ -150,6 +149,8 @@
     <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList_Failure.ic" NAME="AddInteractorTest.testAddProductToShoppingList_Failure Coverage Results" MODIFIED="1701648924139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList.ic" NAME="AddInteractorTest.testAddProductToShoppingList Coverage Results" MODIFIED="1701644358617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest.ic" NAME="AddInteractorTest Coverage Results" MODIFIED="1701648607991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Csc207Project$AddTest.ic" NAME="AddTest Coverage Results" MODIFIED="1701654851595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Csc207Project$SearchTest.ic" NAME="SearchTest Coverage Results" MODIFIED="1701655092255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Csc207Project$AddInteractorTest_testAddProductToShoppingList_Success.ic" NAME="AddInteractorTest.testAddProductToShoppingList_Success Coverage Results" MODIFIED="1701645285176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
