@@ -17,7 +17,6 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class ShoppingListView implements ShoppingListObserver {
-
     public Product removedProduct = null;
     JFrame frame = new JFrame("Shopping List");
     JList<CommonProduct> list = new JList<>();
@@ -33,7 +32,7 @@ public class ShoppingListView implements ShoppingListObserver {
 
     private ShoppingListViewModel viewModel;
   
-    private final CheckOutController checkoutController;
+
     public void updateShoppingList(Product product){
         if (product != null) {
             model.addElement((CommonProduct) product);
@@ -86,7 +85,7 @@ public class ShoppingListView implements ShoppingListObserver {
     public ShoppingListView(ShoppingListViewModel viewModel, RemoveController removeController,
                             ClearController clearController, CheckoutController checkoutController) {
         this.viewModel = viewModel;
-        this.checkoutController = checkoutController;
+
 
         list.setModel(model);
 
@@ -113,10 +112,15 @@ public class ShoppingListView implements ShoppingListObserver {
                     ShoppingListState shoppingListState = viewModel.getState();
                     float total_price = shoppingListState.get_total_price();
                     // calculate the tax value
-                    float tax = Math.round(total_price*0.13F);
+                    float tax = Math.round(total_price * 0.13F);
                     JOptionPane.showMessageDialog(null, total_price + "\n" + "+ " + tax + " (GST)" + "\n" + "----------" + "\n" + "$ " + (total_price + tax),
                             "Checkout", JOptionPane.INFORMATION_MESSAGE);
-                viewModel.firePropertyChanged();
+                    viewModel.firePropertyChanged();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No products available to checkout",
+                            "No Products Found", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 
@@ -150,5 +154,5 @@ public class ShoppingListView implements ShoppingListObserver {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-    }
-}
+
+}}

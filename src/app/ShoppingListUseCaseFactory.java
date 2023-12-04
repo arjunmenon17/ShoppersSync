@@ -3,8 +3,13 @@ package app;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.shopping_list.ShoppingListPresenter;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.checkout.CheckoutController;
 import interface_adapter.shopping_list.clear.ClearController;
 import interface_adapter.shopping_list.remove_list.RemoveController;
+import use_case.shopping_list.checkout.CheckoutDataAccessInterface;
+import use_case.shopping_list.checkout.CheckoutInputBoundary;
+import use_case.shopping_list.checkout.CheckoutInteractor;
+import use_case.shopping_list.checkout.CheckoutOutputBoundary;
 import use_case.shopping_list.clear.ClearDataAccessInterface;
 import use_case.shopping_list.clear.ClearInputBoundary;
 import use_case.shopping_list.clear.ClearInteractor;
@@ -19,7 +24,7 @@ public class ShoppingListUseCaseFactory {
     public static ShoppingListView create(ViewManagerModel viewManagerModel,
                                           ShoppingListViewModel shoppingListViewModel,
                                           RemoveDataAccessInterface removeDataAccessInterface,
-                                          ClearDataAccessInterface clearDataAccessInterface){
+                                          ClearDataAccessInterface clearDataAccessInterface, CheckoutDataAccessInterface checkoutDataAccessInterface){
 
         RemoveController removeController = createRemoveUseCase(viewManagerModel, shoppingListViewModel,
                 removeDataAccessInterface);
@@ -27,8 +32,10 @@ public class ShoppingListUseCaseFactory {
         ClearController clearController = createClearUseCase(viewManagerModel, shoppingListViewModel,
                 clearDataAccessInterface);
 
+        CheckoutController checkoutController = createCheckoutUseCase(viewManagerModel, shoppingListViewModel, checkoutDataAccessInterface);
+
         ShoppingListView shoppingListView = new ShoppingListView(shoppingListViewModel, removeController,
-                clearController);
+                clearController, checkoutController);
 
         shoppingListViewModel.addObserver(shoppingListView);
         return shoppingListView;//
@@ -54,6 +61,13 @@ public class ShoppingListUseCaseFactory {
         return new ClearController(clearInteractor);
     }
 
+    private static CheckoutController createCheckoutUseCase(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel, CheckoutDataAccessInterface checkoutDataAccessInterface) {
+
+        CheckoutOutputBoundary checkoutOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+
+        CheckoutInputBoundary checkoutInteractor = new CheckoutInteractor(checkoutDataAccessInterface, checkoutOutputBoundary);
+        return new CheckoutController(checkoutInteractor);
+    }
 
 
 }

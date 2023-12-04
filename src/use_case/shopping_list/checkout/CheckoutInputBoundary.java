@@ -1,7 +1,7 @@
 package use_case.shopping_list.checkout;
 import entity.Product;
 
-import java.util.List
+import java.util.List;
 
 public interface CheckoutInputBoundary {
 

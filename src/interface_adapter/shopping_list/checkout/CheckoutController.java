@@ -3,6 +3,8 @@ import use_case.shopping_list.checkout.CheckoutInputBoundary;
 import entity.Product;
 import interface_adapter.shopping_list.ShoppingListController;
 
+import java.util.List;
+
 public class CheckoutController {
   
     private final CheckoutInputBoundary checkoutShoppingListUseCase;

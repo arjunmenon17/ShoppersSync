@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, RemoveDataAccessInterface,
-        ClearDataAccessInterface {
+        ClearDataAccessInterface, CheckoutDataAccessInterface {
     private List<Product> shoppingList = new ArrayList<>();
 
     public InMemoryShoppingListDataAccess() {
@@ -35,10 +35,11 @@ public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, R
     public float checkoutProductsInShoppingList(List<Product> productList) {
         float total_price = 0.00F;
         // loop through products and find their prices
-        for (Product product: productList) {
+        for (Product product : productList) {
             total_price += product.getPrice();
         }
         return total_price;
+    }
 
     public List<Product> getShoppingList() {
         return shoppingList;
