@@ -5,6 +5,10 @@ import entity.Product;
 import entity.ProductFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import use_case.search.calc_score.CalcScoreDataAccessInterface;
+import use_case.search.calc_score.CalcScoreInputBoundary;
+import use_case.search.calc_score.CalcScoreInputData;
+import use_case.search.calc_score.CalcScoreInteractor;
 
 
 import java.io.BufferedReader;
@@ -21,12 +25,14 @@ public class SearchInteractor implements SearchInputBoundary {
 
     final SearchOutputBoundary searchPresenter;
     final ProductFactory productFactory;
+    final CalcScoreDataAccessInterface calcScoreDataAccessInterface;
 
 
-    public SearchInteractor(SearchOutputBoundary searchOutputBoundary, ProductFactory productFactory) {
+    public SearchInteractor(SearchOutputBoundary searchOutputBoundary, ProductFactory productFactory, CalcScoreDataAccessInterface calcScoreDataAccessInterface) {
 
         this.searchPresenter = searchOutputBoundary;
         this.productFactory = productFactory;
+        this.calcScoreDataAccessInterface = calcScoreDataAccessInterface;
 
     }
 
@@ -62,7 +68,10 @@ public class SearchInteractor implements SearchInputBoundary {
                 BigDecimal price = base_item.getBigDecimal("price");
                 float f_price = price.floatValue();
 
-                float esg = 0.00F;
+                CalcScoreInputData calcScoreInputData = new CalcScoreInputData(brand);
+
+                CalcScoreInputBoundary calcScoreInteractor = new CalcScoreInteractor(calcScoreDataAccessInterface);
+                float esg = calcScoreInteractor.execute(calcScoreInputData);
 
                 Product product = productFactory.create(name, f_price, brand, description, image, esg);
 

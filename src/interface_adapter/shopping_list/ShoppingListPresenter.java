@@ -4,10 +4,11 @@ import entity.Product;
 import interface_adapter.ViewManagerModel;
 import use_case.shopping_list.add.AddOutputBoundary;
 import use_case.shopping_list.add.AddOutputData;
-import use_case.shopping_list.checkout.CheckoutOutputBoundary;
-import use_case.shopping_list.checkout.CheckoutOutputData;
+import use_case.shopping_list.clear.ClearOutputBoundary;
+import use_case.shopping_list.remove_list.RemoveOutputData;
+import use_case.shopping_list.remove_list.RemoveOutputBoundary;
 
-public class ShoppingListPresenter implements AddOutputBoundary, CheckoutOutputBoundary {
+public class ShoppingListPresenter implements AddOutputBoundary, RemoveOutputBoundary, ClearOutputBoundary {
     private final ShoppingListViewModel shoppingListViewModel;
 
     public ShoppingListPresenter(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel) {
@@ -22,11 +23,16 @@ public class ShoppingListPresenter implements AddOutputBoundary, CheckoutOutputB
         shoppingListViewModel.firePropertyChanged();
     }
 
-
-    @Override
-    public void prepareSuccessView(CheckoutOutputData checkoutOutputData) {
+    public void prepareRemoveSuccessView(RemoveOutputData removedProduct) {
         ShoppingListState newState = shoppingListViewModel.getState();
-        newState.set_total_price(checkoutOutputData.getTotalPrice());
+        newState.removeProduct(removedProduct.getProduct());
+        this.shoppingListViewModel.setState(newState);
+        shoppingListViewModel.firePropertyChanged();
+    }
+
+    public void prepareClearSuccessView() {
+        ShoppingListState newState = shoppingListViewModel.getState();
+        newState.clearList();
         this.shoppingListViewModel.setState(newState);
         shoppingListViewModel.firePropertyChanged();
     }
