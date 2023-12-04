@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="IMPLETED CLEAR USE CASE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/src/UseCaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/UseCaseTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/checkout/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/checkout/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShoppingListView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "MoreTesting",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -116,7 +122,7 @@
       <workItem from="1700507236623" duration="2218000" />
       <workItem from="1701038516567" duration="17728000" />
       <workItem from="1701580467525" duration="2887000" />
-      <workItem from="1701662546040" duration="1865000" />
+      <workItem from="1701671282813" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="IMPLETED REMOVE_LIST USE CASE">
       <option name="closed" value="true" />
