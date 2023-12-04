@@ -11,6 +11,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.shopping_list.ShoppingListPresenter;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 import interface_adapter.shopping_list.add.AddController;
+import interface_adapter.shopping_list.clear.ClearController;
 import interface_adapter.shopping_list.remove_list.RemoveController;
 import org.junit.jupiter.api.Test;
 import use_case.search.SearchInputBoundary;
@@ -20,6 +21,8 @@ import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.InMemoryShoppingListDataAccess;
 import use_case.shopping_list.add.*;
 import app.SearchUseCaseFactory;
+import use_case.shopping_list.clear.ClearInteractor;
+import use_case.shopping_list.clear.ClearOutputBoundary;
 import use_case.shopping_list.remove_list.RemoveInteractor;
 import use_case.shopping_list.remove_list.RemoveOutputBoundary;
 
@@ -112,6 +115,27 @@ public class UseCaseTests {
     }
     @Test
     public void testClearProducts_Success(){
-        // To be Implemented
+        InMemoryShoppingListDataAccess mockDataAccess = new InMemoryShoppingListDataAccess();
+        ProductFactory productFactory = new CommonProductFactory();
+        ViewManagerModel viewManagerModel = new ViewManagerModel();
+        ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
+        Product sampleProduct = productFactory.create("Soccer Ball", 10.99f, "Nike", "Nice Ball", "", 0.4f);
+        AddOutputBoundary mockAddOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+        AddInteractor addInteractor = new AddInteractor(mockDataAccess, mockAddOutputBoundary);
+
+
+        AddController addController = new AddController(addInteractor);
+        addController.execute(sampleProduct);
+        addController.execute(sampleProduct); // Adds 2 of the same product to the list
+
+        ClearOutputBoundary clearOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+        ClearInteractor clearInteractor = new ClearInteractor(mockDataAccess, clearOutputBoundary);
+
+
+        ClearController clearController = new ClearController(clearInteractor);
+        clearController.executeClear();
+
+        assertFalse(mockDataAccess.getShoppingList().contains(sampleProduct));
+        assertFalse(shoppingListViewModel.getState().getProductList().contains(sampleProduct));
     }
 }
