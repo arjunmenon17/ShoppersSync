@@ -12,6 +12,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.shopping_list.ShoppingListPresenter;
 import interface_adapter.shopping_list.ShoppingListViewModel;
 import interface_adapter.shopping_list.add.AddController;
+import interface_adapter.shopping_list.checkout.CheckoutController;
 import interface_adapter.shopping_list.clear.ClearController;
 import interface_adapter.shopping_list.remove_list.RemoveController;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,9 @@ import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.InMemoryShoppingListDataAccess;
 import use_case.shopping_list.add.*;
 import app.SearchUseCaseFactory;
+import use_case.shopping_list.checkout.CheckoutInteractor;
+import use_case.shopping_list.checkout.CheckoutOutputBoundary;
+import use_case.shopping_list.checkout.CheckoutOutputData;
 import use_case.shopping_list.clear.ClearInteractor;
 import use_case.shopping_list.clear.ClearOutputBoundary;
 import use_case.shopping_list.remove_list.RemoveInteractor;
@@ -144,20 +148,30 @@ public class UseCaseTests {
     @Test
     public void testView(){
         Main.main(null); // Ensure the views open with the main class
-//        JTextField searchInputField = ma
-////        ViewManagerModel viewManagerModel = new ViewManagerModel();
-////        SearchViewModel searchViewModel = new SearchViewModel();
-////        SearchOutputBoundary searchOutputBoundary = new SearchPresenter(viewManagerModel, searchViewModel);
-////        ProductFactory productFactory = new CommonProductFactory();
-////        CalcScoreDataAccessInterface calcScore = new FileUserDataAccessObject();
-////
-////        SearchInputBoundary searchInputInteractor = new SearchInteractor(searchOutputBoundary, productFactory, calcScore);
-////        SearchController searchController = new SearchController(searchInputInteractor);
-////        SearchView searchView = new SearchView()
-//        searchView.searchInputField.setText("123");
-//        searchView.searchButton.doClick();
+    }
+    @Test
+    public void testCheckout_Success(){
+        InMemoryShoppingListDataAccess mockDataAccess = new InMemoryShoppingListDataAccess();
+        ProductFactory productFactory = new CommonProductFactory();
+        ViewManagerModel viewManagerModel = new ViewManagerModel();
+        ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
+        Product sampleProduct = productFactory.create("Soccer Ball", 10f, "Nike", "Nice Ball", "", 0.4f);
+        AddOutputBoundary mockAddOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+        AddInteractor addInteractor = new AddInteractor(mockDataAccess, mockAddOutputBoundary);
 
-        // Assert that the expected message dialog occurred
-//        assertEquals("Invalid Product ID", messageDialogResult);
+
+        AddController addController = new AddController(addInteractor);
+        addController.execute(sampleProduct);
+        addController.execute(sampleProduct); // Adds 2 of the same product to the list
+
+        CheckoutOutputBoundary checkoutOutputBoundary = new ShoppingListPresenter(viewManagerModel, shoppingListViewModel);
+        CheckoutInteractor checkoutInteractor = new CheckoutInteractor(mockDataAccess, checkoutOutputBoundary);
+
+
+        CheckoutController checkoutController = new CheckoutController(checkoutInteractor);
+        checkoutController.execute(mockDataAccess.getShoppingList());
+        assertTrue(shoppingListViewModel.getState().get_total_price() == 20f);
+
+
     }
 }
