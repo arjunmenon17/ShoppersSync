@@ -20,7 +20,7 @@ public class CheckoutInteractor implements CheckoutInputBoundary{\
             CheckoutOutputData checkoutOutputData = new CheckoutOutputData(total_price, false);
             checkoutOutputBoundary.prepareSuccessView(checkoutOutputData);
         } catch (Exception e) {
-            checkoutOutputBoundary.prepareFailView("Failed to checkout products")
+            checkoutOutputBoundary.prepareFailView("Failed to checkout products");
         }
     }
 }

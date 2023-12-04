@@ -9,6 +9,8 @@ public class ShoppingListState {
     private List<Product> productList = new ArrayList<>();
     private String errorMessage;
 
+    private float total_price = 0.00F;
+
     public ShoppingListState(ShoppingListState copy) {
         productList = copy.productList;
         errorMessage = copy.errorMessage;
