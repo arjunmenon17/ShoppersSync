@@ -34,7 +34,11 @@ public class ShoppingListState {
         return errorMessage;
     }
 
-    public void set_total_score(float total_cost) {
-        total_price = total_cost;
+    public void set_total_price(float total_cost) {
+        this.total_price = total_cost;
+    }
+
+    public float get_total_price() {
+        return total_price;
     }
 }
