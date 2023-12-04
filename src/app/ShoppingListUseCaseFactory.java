@@ -31,7 +31,7 @@ public class ShoppingListUseCaseFactory {
                 clearController);
 
         shoppingListViewModel.addObserver(shoppingListView);
-        return shoppingListView;
+        return shoppingListView;//
     }
 
     public static RemoveController createRemoveUseCase(ViewManagerModel viewManagerModel,

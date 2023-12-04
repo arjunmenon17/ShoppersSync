@@ -20,7 +20,7 @@ public class ShoppingListState {
 
     public List<Product> getProductList() {
         return productList;
-    }
+    }//
 
     public void addProduct(Product product) {
         this.productList.add(product);
