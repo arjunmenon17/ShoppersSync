@@ -47,6 +47,7 @@ public class SearchTest {
         searchController.execute("123");
         System.out.println(searchViewModel.getState().getSearchError());
 
+        // Checks for Search Error
         assertTrue(searchViewModel.getState().getSearchError().equals("Product does not exist, please enter a valid Product ID."));
     }
 }
