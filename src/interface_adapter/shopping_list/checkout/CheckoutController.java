@@ -2,6 +2,7 @@ package interface_adapter.shopping_list.checkout;
 import use_case.shopping_list.checkout.CheckoutInputBoundary;
 import entity.Product;
 import interface_adapter.shopping_list.ShoppingListController;
+import use_case.shopping_list.checkout.CheckoutInputData;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class CheckoutController {
     }
 
     public void execute(List<Product> products) {
-        checkoutShoppingListUseCase.execute(products);
+
+        CheckoutInputData checkoutInputData = new CheckoutInputData(products);
+        checkoutShoppingListUseCase.execute(checkoutInputData.getProductList());
     }
 }

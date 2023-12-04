@@ -24,7 +24,7 @@ public class CalcScoreInteractor implements CalcScoreInputBoundary{
     }
 
     public String find_parent_company(String brand) {
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/chat/completions";
         String model = "gpt-3.5-turbo";
 
