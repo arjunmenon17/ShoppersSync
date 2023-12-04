@@ -8,12 +8,14 @@ import java.util.List;
 public class ShoppingListState {
     private List<Product> productList = new ArrayList<>();
     private String errorMessage;
+    private Product product;
 
     private float total_price = 0.00F;
 
     public ShoppingListState(ShoppingListState copy) {
         productList = copy.productList;
         errorMessage = copy.errorMessage;
+        product = copy.product;
     }
     public ShoppingListState() {
     }
@@ -25,6 +27,12 @@ public class ShoppingListState {
     public void addProduct(Product product) {
         this.productList.add(product);
     }
+
+    public void removeProduct(Product product) {this.productList.remove(product);}
+
+    public void clearList() {this.productList.clear();}
+
+    public Product getProduct() {return product;};
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;

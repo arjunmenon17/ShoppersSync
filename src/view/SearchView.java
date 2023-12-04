@@ -32,7 +32,7 @@ public class SearchView extends JFrame {
 
     private final SearchController searchController;
     private final AddController addController;
-    public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url) {
+    public void updateProductInformation(String productName, float productPrice, String brand, String productDescription, String image_url, float esg) {
 
         PRODUCT_NAME.setText(productName);
         PRODUCT_NAME.setFont(new Font("Serif", Font.BOLD, 25));
@@ -42,6 +42,14 @@ public class SearchView extends JFrame {
         PRODUCT_BRAND.setFont(new Font("Serif", Font.PLAIN, 20));
         PRODUCT_DESCRIPTION.setText("<html>" + productDescription.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>");
         PRODUCT_DESCRIPTION.setFont(new Font("Serif", Font.PLAIN, 20));
+
+        PRODUCT_ESG.setText("Environmental Social Governance Score: " + esg);
+        PRODUCT_ESG.setFont(new Font("Serif", Font.PLAIN, 20));
+
+        if (esg == -1.00F) {
+            PRODUCT_ESG.setText("Environmental Social Governance Score unavailable.");
+            PRODUCT_ESG.setFont(new Font("Serif", Font.PLAIN, 20));
+        }
 
         try {
             URL url = new URL(image_url);
@@ -55,6 +63,7 @@ public class SearchView extends JFrame {
             PRODUCT_IMAGE.setText("Image not found.");
             PRODUCT_IMAGE.setFont(new Font("Serif", Font.PLAIN, 25));
             PRODUCT_BRAND.setText("");
+            PRODUCT_ESG.setText("");
         }
 
     }
@@ -81,7 +90,7 @@ public class SearchView extends JFrame {
                     searchController.execute(searchInputField.getText());
                     SearchState searchState = viewModel.getState();
                     updateProductInformation(searchState.getProductName(),
-                            searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription(), searchState.getProductImage());
+                            searchState.getProductPrice(), searchState.getProductBrand(), searchState.getProductDescription(), searchState.getProductImage(), searchState.getProductESG());
                     if (searchState.getSearchError() != null) {
 
                         JOptionPane.showMessageDialog(null, searchState.getSearchError(),
@@ -120,6 +129,7 @@ public class SearchView extends JFrame {
                 PRODUCT_PRICE.setText("");
                 PRODUCT_BRAND.setText("");
                 PRODUCT_DESCRIPTION.setText("");
+                PRODUCT_ESG.setText("");
                 PRODUCT_IMAGE.setText("");
                 PRODUCT_IMAGE.setIcon(null);
                 viewModel.getState().setProduct(null);

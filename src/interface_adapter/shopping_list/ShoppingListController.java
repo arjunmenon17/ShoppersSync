@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ShoppingListController {
     public void execute(Product product); // For add and remove
+    void executeClear(); // For clear
 }
