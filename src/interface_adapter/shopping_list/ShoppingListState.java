@@ -10,8 +10,6 @@ public class ShoppingListState {
     private String errorMessage;
     private Product product;
 
-    private float total_price = 0.00F;
-
     public ShoppingListState(ShoppingListState copy) {
         productList = copy.productList;
         errorMessage = copy.errorMessage;
@@ -40,13 +38,5 @@ public class ShoppingListState {
 
     public String getErrorMessage() {
         return errorMessage;
-    }
-
-    public void set_total_price(float total_cost) {
-        this.total_price = total_cost;
-    }
-
-    public float get_total_price() {
-        return total_price;
     }
 }
