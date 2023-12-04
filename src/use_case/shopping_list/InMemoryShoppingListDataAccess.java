@@ -2,12 +2,16 @@ package use_case.shopping_list;
 
 import entity.Product;
 import use_case.shopping_list.add.AddDataAccessInterface;
+import use_case.shopping_list.clear.ClearDataAccessInterface;
+import use_case.shopping_list.remove_list.RemoveDataAccessInterface;
+import use_case.shopping_list.remove_list.RemoveInputData;
 import use_case.shopping_list.checkout.CheckoutDataAccessInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, CheckoutDataAccessInterface {
+public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, RemoveDataAccessInterface,
+        ClearDataAccessInterface {
     private List<Product> shoppingList = new ArrayList<>();
 
     public InMemoryShoppingListDataAccess() {
@@ -19,8 +23,12 @@ public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, C
         shoppingList.add(product);
     }
 
-    public List<Product> getShoppingList() {
-        return shoppingList;
+    public void removeProductFromShoppingList(Product product) {
+        shoppingList.remove(product);
+    }
+
+    public void clearShoppingList() {
+        shoppingList.clear();
     }
 
     @Override
@@ -31,5 +39,9 @@ public class InMemoryShoppingListDataAccess implements AddDataAccessInterface, C
             total_price += product.getPrice();
         }
         return total_price;
+
+    public List<Product> getShoppingList() {
+        return shoppingList;
+
     }
 }

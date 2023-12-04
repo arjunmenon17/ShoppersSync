@@ -22,6 +22,7 @@ public class SearchPresenter implements SearchOutputBoundary {
         searchState.setProductDescription(response.getProduct().getDescription());
         searchState.setProductImage(response.getProduct().getImage());
         searchState.setProductBrand(response.getProduct().getBrand());
+        searchState.setESG(response.getProduct().environmentalScore());
         searchState.setSearchError(null);
 
         this.searchViewModel.setState(searchState);
@@ -36,6 +37,7 @@ public class SearchPresenter implements SearchOutputBoundary {
         searchState.setProductDescription("");
         searchState.setProductImage("");
         searchState.setProductBrand("");
+        searchState.setESG(-1.00F);
         searchState.setSearchError(error);
 
         this.searchViewModel.setState(searchState);

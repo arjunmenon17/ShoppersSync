@@ -14,4 +14,5 @@ public class CheckoutInputData {//
     public List<Product> getProductList() {
         return productList;
     }
+
 }

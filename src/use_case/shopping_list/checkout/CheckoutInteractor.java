@@ -23,4 +23,5 @@ public class CheckoutInteractor implements CheckoutInputBoundary{
             checkoutOutputBoundary.prepareFailView("Failed to checkout products");
         }
     }
+
 }

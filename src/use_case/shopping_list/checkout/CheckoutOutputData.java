@@ -1,8 +1,7 @@
 package use_case.shopping_list.checkout;
 
-import entity.Product;
-
 public class CheckoutOutputData {
+
     private final float total_score;
     private final boolean useCaseFailed;
 
@@ -14,4 +13,5 @@ public class CheckoutOutputData {
     public float getTotalPrice() {
         return total_score;
     }
+
 }
