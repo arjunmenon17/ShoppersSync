@@ -7,6 +7,7 @@ import interface_adapter.shopping_list.ShoppingListViewModel;
 import use_case.search.calc_score.CalcScoreDataAccessInterface;
 import use_case.shopping_list.InMemoryShoppingListDataAccess;
 import use_case.shopping_list.add.AddDataAccessInterface;
+import use_case.shopping_list.remove_list.RemoveDataAccessInterface;
 import view.SearchView;
 import view.ShoppingListView;
 import view.ViewManager;
@@ -32,8 +33,9 @@ public class Main {
 //        new ViewManager(views, searchCardLayout, viewManagerModel);
 
         ShoppingListViewModel shoppingListViewModel = new ShoppingListViewModel();
+        RemoveDataAccessInterface removeDataAccessInterface = new InMemoryShoppingListDataAccess();
 //        new ShoppingListView(shoppingListViewModel);
-        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel);
+        ShoppingListUseCaseFactory.create(viewManagerModel, shoppingListViewModel, removeDataAccessInterface);
 
         SearchViewModel searchViewModel = new SearchViewModel();
         AddDataAccessInterface addDataAccess = new InMemoryShoppingListDataAccess();

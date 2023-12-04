@@ -5,6 +5,7 @@ import entity.Product;
 import interface_adapter.shopping_list.ShoppingListObserver;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.remove_list.RemoveController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ import java.awt.event.MouseEvent;
 
 public class ShoppingListView implements ShoppingListObserver {
 
+    public Product removedProduct = null;
     JFrame frame = new JFrame("Shopping List");
     JList<CommonProduct> list = new JList<>();
     DefaultListModel<CommonProduct> model = new DefaultListModel<>();
@@ -36,6 +38,16 @@ public class ShoppingListView implements ShoppingListObserver {
         }
     }
 
+    public void updateRemoveShoppingList(Product product){
+        if (product != null) {
+            model.removeElement(product);
+            label.setText("");
+        }
+        if (!frame.isVisible()) {
+            frame.setVisible(true);
+        }
+    }
+
     private void displaySelectedProductDetails(int selectedIndex) {
         if (selectedIndex >= 0 && selectedIndex < model.getSize()) {
             Product selectedProduct = model.getElementAt(selectedIndex);
@@ -51,13 +63,14 @@ public class ShoppingListView implements ShoppingListObserver {
                 int selectedIndex = list.getSelectedIndex();
                 if (selectedIndex != -1) {
                     displaySelectedProductDetails(selectedIndex);
+                    removedProduct = model.getElementAt(selectedIndex);
                 }
             }
         });
     }
 
 
-    public ShoppingListView(ShoppingListViewModel viewModel) {
+    public ShoppingListView(ShoppingListViewModel viewModel, RemoveController removeController) {
         this.viewModel = viewModel;
 
         list.setModel(model);
@@ -84,7 +97,16 @@ public class ShoppingListView implements ShoppingListObserver {
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewModel.firePropertyChanged();
+                if (removedProduct != null) {
+                    removeController.execute(removedProduct);
+                    updateRemoveShoppingList(removedProduct);
+                    viewModel.firePropertyChanged();
+                    removedProduct = null;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "No product selected",
+                            "Product Not Found", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 

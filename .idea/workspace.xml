@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
-
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Csc207Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Csc207Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/SearchUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/SearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShoppingListView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +48,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-
-    "git-widget-placeholder": "main",
-
+    "git-widget-placeholder": "gavins__branch",
     "last_opened_file_path": "C:/Users/arjun/IdeaProjects/menonar2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -156,10 +150,30 @@
           <line>62</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
           <line>16</line>
-          <properties class="use_case.search.calc_score.CalcScoreInteractor" method="execute">
+          <properties class="use_case.search.calc_score.CalcScoreInteractor">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

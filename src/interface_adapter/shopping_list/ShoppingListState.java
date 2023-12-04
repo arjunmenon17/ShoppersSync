@@ -8,10 +8,12 @@ import java.util.List;
 public class ShoppingListState {
     private List<Product> productList = new ArrayList<>();
     private String errorMessage;
+    private Product product;
 
     public ShoppingListState(ShoppingListState copy) {
         productList = copy.productList;
         errorMessage = copy.errorMessage;
+        product = copy.product;
     }
     public ShoppingListState() {
     }
@@ -25,6 +27,8 @@ public class ShoppingListState {
     }
 
     public void removeProduct(Product product) {this.productList.remove(product);}
+
+    public Product getProduct() {return product;};
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
