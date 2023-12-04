@@ -85,6 +85,7 @@ public class ShoppingListView implements ShoppingListObserver {
                     checkoutController.execute(products);
                     ShoppingListState shoppingListState = viewModel.getState();
                     float total_price = shoppingListState.get_total_price();
+                    // calculate the tax value
                     float tax = Math.round(total_price*0.13F);
                     JOptionPane.showMessageDialog(null, total_price + "\n" + "+ " + tax + " (GST)" + "\n" + "----------" + "\n" + "$ " + (total_price + tax),
                             "Checkout", JOptionPane.INFORMATION_MESSAGE);
