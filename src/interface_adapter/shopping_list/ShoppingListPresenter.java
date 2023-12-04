@@ -26,7 +26,9 @@ public class ShoppingListPresenter implements AddOutputBoundary, CheckoutOutputB
     @Override
     public void prepareSuccessView(CheckoutOutputData checkoutOutputData) {
         ShoppingListState newState = shoppingListViewModel.getState();
-        newState.set_total_score(checkoutOutputData.getTotal_score())
+        newState.set_total_score(checkoutOutputData.getTotalPrice());
+        this.shoppingListViewModel.setState(newState);
+        shoppingListViewModel.firePropertyChanged();
     }
 
     public void prepareFailView(String error) {
