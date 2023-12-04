@@ -16,4 +16,7 @@ public class AddController implements ShoppingListController {
         AddInputData addInputData = new AddInputData(product);
         addToShoppingListUseCase.execute(addInputData);
     }
+
+    @Override
+    public void executeClear() {}
 }
