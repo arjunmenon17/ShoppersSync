@@ -4,7 +4,7 @@ import entity.Product;
 
 import java.util.List;
 
-public class CheckoutInputData {
+public class CheckoutInputData {//
     private final List<Product> productList;
 
     public CheckoutInputData(List<Product> productList) {

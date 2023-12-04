@@ -10,7 +10,7 @@ public class CheckoutOutputData {
         this.total_score = total_score;
         this.useCaseFailed = useCaseFailed;
     }
-
+//
     public float getTotalPrice() {
         return total_score;
     }

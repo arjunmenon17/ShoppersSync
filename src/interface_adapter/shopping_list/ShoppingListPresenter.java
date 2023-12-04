@@ -11,7 +11,7 @@ public class ShoppingListPresenter implements AddOutputBoundary, CheckoutOutputB
     private final ShoppingListViewModel shoppingListViewModel;
 
     public ShoppingListPresenter(ViewManagerModel viewManagerModel, ShoppingListViewModel shoppingListViewModel) {
-        this.shoppingListViewModel = shoppingListViewModel;
+        this.shoppingListViewModel = shoppingListViewModel;//
     }
 
 

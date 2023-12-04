@@ -18,7 +18,7 @@ public class CheckoutInteractor implements CheckoutInputBoundary{
         try {
             float total_price = checkoutDataAccessInterface.checkoutProductsInShoppingList(products);
             CheckoutOutputData checkoutOutputData = new CheckoutOutputData(total_price, false);
-            checkoutOutputBoundary.prepareSuccessView(checkoutOutputData);
+            checkoutOutputBoundary.prepareSuccessView(checkoutOutputData);//
         } catch (Exception e) {
             checkoutOutputBoundary.prepareFailView("Failed to checkout products");
         }

@@ -30,7 +30,7 @@ public class ShoppingListViewModel extends ViewModel {
 
     public void notifyObservers(Product product) {
         for (ShoppingListObserver observer : observers) {
-            observer.updateShoppingList(product);
+            observer.updateShoppingList(product);//
         }
     }
 

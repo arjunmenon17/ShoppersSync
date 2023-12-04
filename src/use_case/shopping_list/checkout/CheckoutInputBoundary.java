@@ -5,5 +5,5 @@ import entity.Product;
 import java.util.List;
 
 public interface CheckoutInputBoundary {
-    void execute(List<Product> products);
+    void execute(List<Product> products);//
 }
