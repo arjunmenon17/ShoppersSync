@@ -33,4 +33,8 @@ public class ShoppingListState {
     public String getErrorMessage() {
         return errorMessage;
     }
+
+    public void set_total_score(float total_cost) {
+        total_price = total_cost;
+    }
 }
