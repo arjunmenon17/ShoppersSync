@@ -13,6 +13,7 @@ public class AddController implements ShoppingListController {
     }
 
     public void execute(Product product) {
-        addToShoppingListUseCase.execute(product);
+        AddInputData addInputData = new AddInputData(product);
+        addToShoppingListUseCase.execute(addInputData);
     }
 }
