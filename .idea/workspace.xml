@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="">
+    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="IMPLETED REMOVE_LIST USE CASE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/add/AddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/add/AddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/clear/ClearController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/clear/ClearController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/remove_list/RemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/remove_list/RemoveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShoppingListView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +109,15 @@
       <workItem from="1701038516567" duration="17728000" />
       <workItem from="1701580467525" duration="2887000" />
     </task>
+    <task id="LOCAL-00001" summary="IMPLETED REMOVE_LIST USE CASE">
+      <option name="closed" value="true" />
+      <created>1701648289919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701648289919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +133,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="IMPLETED REMOVE_LIST USE CASE" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPLETED REMOVE_LIST USE CASE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -149,26 +175,6 @@
           <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>
           <line>62</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/use_case/shopping_list/remove_list/RemoveInteractor.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/use_case/search/calc_score/CalcScoreInteractor.java</url>

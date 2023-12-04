@@ -5,6 +5,7 @@ import entity.Product;
 import interface_adapter.shopping_list.ShoppingListObserver;
 import interface_adapter.shopping_list.ShoppingListState;
 import interface_adapter.shopping_list.ShoppingListViewModel;
+import interface_adapter.shopping_list.clear.ClearController;
 import interface_adapter.shopping_list.remove_list.RemoveController;
 
 import javax.swing.*;
@@ -48,6 +49,14 @@ public class ShoppingListView implements ShoppingListObserver {
         }
     }
 
+    public void updateClearShoppingList() {
+        model.clear();
+        label.setText("");
+        if (!frame.isVisible()) {
+            frame.setVisible(true);
+        }
+    }
+
     private void displaySelectedProductDetails(int selectedIndex) {
         if (selectedIndex >= 0 && selectedIndex < model.getSize()) {
             Product selectedProduct = model.getElementAt(selectedIndex);
@@ -70,7 +79,8 @@ public class ShoppingListView implements ShoppingListObserver {
     }
 
 
-    public ShoppingListView(ShoppingListViewModel viewModel, RemoveController removeController) {
+    public ShoppingListView(ShoppingListViewModel viewModel, RemoveController removeController,
+                            ClearController clearController) {
         this.viewModel = viewModel;
 
         list.setModel(model);
@@ -83,6 +93,8 @@ public class ShoppingListView implements ShoppingListObserver {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                clearController.executeClear();
+                updateClearShoppingList();
                 viewModel.firePropertyChanged();
             }
         });

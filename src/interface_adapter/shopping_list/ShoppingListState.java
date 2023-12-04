@@ -28,6 +28,8 @@ public class ShoppingListState {
 
     public void removeProduct(Product product) {this.productList.remove(product);}
 
+    public void clearList() {this.productList.clear();}
+
     public Product getProduct() {return product;};
 
     public void setErrorMessage(String errorMessage) {

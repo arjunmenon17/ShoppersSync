@@ -14,4 +14,7 @@ public class RemoveController implements ShoppingListController{
     public void execute(Product product) {
         removeFromShoppingListUseCase.execute(product);
     }
+
+    @Override
+    public void executeClear() {}
 }

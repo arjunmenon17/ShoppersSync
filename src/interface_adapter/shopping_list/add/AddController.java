@@ -15,4 +15,7 @@ public class AddController implements ShoppingListController {
     public void execute(Product product) {
         addToShoppingListUseCase.execute(product);
     }
+
+    @Override
+    public void executeClear() {}
 }

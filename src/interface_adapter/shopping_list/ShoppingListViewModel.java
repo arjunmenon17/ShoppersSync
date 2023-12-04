@@ -50,6 +50,10 @@ public class ShoppingListViewModel extends ViewModel {
         shoppingList.remove(product);
     }
 
+    public void clearList() {
+        shoppingList.clear();
+    }
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
