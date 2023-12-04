@@ -1,3 +1,4 @@
+import app.Main;
 import data_access.FileUserDataAccessObject;
 import entity.CommonProduct;
 import entity.Product;
@@ -25,7 +26,9 @@ import use_case.shopping_list.clear.ClearInteractor;
 import use_case.shopping_list.clear.ClearOutputBoundary;
 import use_case.shopping_list.remove_list.RemoveInteractor;
 import use_case.shopping_list.remove_list.RemoveOutputBoundary;
+import view.SearchView;
 
+import javax.swing.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -137,5 +140,24 @@ public class UseCaseTests {
 
         assertFalse(mockDataAccess.getShoppingList().contains(sampleProduct));
         assertFalse(shoppingListViewModel.getState().getProductList().contains(sampleProduct));
+    }
+    @Test
+    public void testView(){
+        Main.main(null); // Ensure the views open with the main class
+//        JTextField searchInputField = ma
+////        ViewManagerModel viewManagerModel = new ViewManagerModel();
+////        SearchViewModel searchViewModel = new SearchViewModel();
+////        SearchOutputBoundary searchOutputBoundary = new SearchPresenter(viewManagerModel, searchViewModel);
+////        ProductFactory productFactory = new CommonProductFactory();
+////        CalcScoreDataAccessInterface calcScore = new FileUserDataAccessObject();
+////
+////        SearchInputBoundary searchInputInteractor = new SearchInteractor(searchOutputBoundary, productFactory, calcScore);
+////        SearchController searchController = new SearchController(searchInputInteractor);
+////        SearchView searchView = new SearchView()
+//        searchView.searchInputField.setText("123");
+//        searchView.searchButton.doClick();
+
+        // Assert that the expected message dialog occurred
+//        assertEquals("Invalid Product ID", messageDialogResult);
     }
 }
