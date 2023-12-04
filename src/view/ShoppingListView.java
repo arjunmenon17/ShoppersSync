@@ -44,7 +44,7 @@ public class ShoppingListView implements ShoppingListObserver {
             frame.setVisible(true);
         }
     }
-
+// TEMP
     public void updateRemoveShoppingList(Product product){
         if (product != null) {
             model.removeElement(product);
