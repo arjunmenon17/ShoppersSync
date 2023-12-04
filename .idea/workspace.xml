@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="IMPLETED REMOVE_LIST USE CASE">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ShoppingListUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/ShoppingListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/add/AddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/add/AddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/clear/ClearController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/clear/ClearController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/shopping_list/remove_list/RemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/shopping_list/remove_list/RemoveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/InMemoryShoppingListDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/shopping_list/clear/ClearOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ShoppingListView.java" afterDir="false" />
-    </list>
+    <list default="true" id="6ef4dac4-1c4e-4d59-9468-781c95a353a2" name="Changes" comment="IMPLETED CLEAR USE CASE" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701648289919</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IMPLETED CLEAR USE CASE">
+      <option name="closed" value="true" />
+      <created>1701657441144</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701657441144</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +125,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="IMPLETED REMOVE_LIST USE CASE" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPLETED REMOVE_LIST USE CASE" />
+    <MESSAGE value="IMPLETED CLEAR USE CASE" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPLETED CLEAR USE CASE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
