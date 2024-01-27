@@ -1,4 +1,4 @@
-# CSC207Project
+# ShopperSync
 
 # Problem Domain:
 A description of the problem domain your team is tentatively wanting to focus on in the project. (e.g., trivia, finance, real estate, etc…)
